@@ -1,176 +1,103 @@
-import * as React from "react"
+import React from "react";
+import styled from "styled-components";
+import Button from "../components/Button";
 
-const pageStyles = {
-  color: "#232129",
-  padding: 96,
-  fontFamily: "-apple-system, Roboto, sans-serif, serif",
-}
-const headingStyles = {
-  marginTop: 0,
-  marginBottom: 64,
-  maxWidth: 320,
-}
-const headingAccentStyles = {
-  color: "#663399",
-}
-const paragraphStyles = {
-  marginBottom: 48,
-}
-const codeStyles = {
-  color: "#8A6534",
-  padding: 4,
-  backgroundColor: "#FFF4DB",
-  fontSize: "1.25rem",
-  borderRadius: 4,
-}
-const listStyles = {
-  marginBottom: 96,
-  paddingLeft: 0,
-}
-const listItemStyles = {
-  fontWeight: 300,
-  fontSize: 24,
-  maxWidth: 560,
-  marginBottom: 30,
-}
+const Main = styled.section`
+  font-family: arial;
+  display: flex;
+  flex-direction: column;
+  ${"" /* gap: 2rem; */}
 
-const linkStyle = {
-  color: "#8954A8",
-  fontWeight: "bold",
-  fontSize: 16,
-  verticalAlign: "5%",
-}
+  h1,
+  dt {
+    text-transform: uppercase;
+  }
 
-const docLinkStyle = {
-  ...linkStyle,
-  listStyleType: "none",
-  marginBottom: 24,
-}
+  h1 {
+    font-size: 2rem;
+    letter-spacing: 2rem;
+  }
 
-const descriptionStyle = {
-  color: "#232129",
-  fontSize: 14,
-  marginTop: 10,
-  marginBottom: 0,
-  lineHeight: 1.25,
-}
+  a {
+    color: red;
+  }
 
-const docLink = {
-  text: "Documentation",
-  url: "https://www.gatsbyjs.com/docs/",
-  color: "#8954A8",
-}
+  dt {
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
 
-const badgeStyle = {
-  color: "#fff",
-  backgroundColor: "#088413",
-  border: "1px solid #088413",
-  fontSize: 11,
-  fontWeight: "bold",
-  letterSpacing: 1,
-  borderRadius: 4,
-  padding: "4px 6px",
-  display: "inline-block",
-  position: "relative",
-  top: -2,
-  marginLeft: 10,
-  lineHeight: 1,
-}
+  dd,
+  dl {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
 
-const links = [
-  {
-    text: "Tutorial",
-    url: "https://www.gatsbyjs.com/docs/tutorial/",
-    description:
-      "A great place to get started if you're new to web development. Designed to guide you through setting up your first Gatsby site.",
-    color: "#E95800",
-  },
-  {
-    text: "How to Guides",
-    url: "https://www.gatsbyjs.com/docs/how-to/",
-    description:
-      "Practical step-by-step guides to help you achieve a specific goal. Most useful when you're trying to get something done.",
-    color: "#1099A8",
-  },
-  {
-    text: "Reference Guides",
-    url: "https://www.gatsbyjs.com/docs/reference/",
-    description:
-      "Nitty-gritty technical descriptions of how Gatsby works. Most useful when you need detailed information about Gatsby's APIs.",
-    color: "#BC027F",
-  },
-  {
-    text: "Conceptual Guides",
-    url: "https://www.gatsbyjs.com/docs/conceptual/",
-    description:
-      "Big-picture explanations of higher-level Gatsby concepts. Most useful for building understanding of a particular topic.",
-    color: "#0D96F2",
-  },
-  {
-    text: "Plugin Library",
-    url: "https://www.gatsbyjs.com/plugins",
-    description:
-      "Add functionality and customize your Gatsby site or app with thousands of plugins built by our amazing developer community.",
-    color: "#8EB814",
-  },
-  {
-    text: "Build and Host",
-    url: "https://www.gatsbyjs.com/cloud",
-    badge: true,
-    description:
-      "Now you’re ready to show the world! Give your Gatsby site superpowers: Build and host on Gatsby Cloud. Get started for free!",
-    color: "#663399",
-  },
-]
+  .header,
+  .content {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .header {
+    border-bottom: 1px solid black;
+  }
+
+  .code-container {
+    iframe {
+      width: 50rem;
+      height: 15rem;
+      border: 0;
+      border-radius: 10px;
+      transform: scale(1);
+      overflow: hidden;
+      margin: 1rem 0;
+    }
+  }
+
+  @media only screen and (max-width: 450px) {
+    padding: 1rem;
+  }
+`;
 
 const IndexPage = () => {
   return (
-    <main style={pageStyles}>
-      <h1 style={headingStyles}>
-        Congratulations
-        <br />
-        <span style={headingAccentStyles}>— you just made a Gatsby site! 🎉🎉🎉</span>
-      </h1>
-      <p style={paragraphStyles}>
-        Edit <code style={codeStyles}>src/pages/index.js</code> to see this page
-        update in real-time. 😎
-      </p>
-      <ul style={listStyles}>
-        <li style={docLinkStyle}>
-          <a
-            style={linkStyle}
-            href={`${docLink.url}?utm_source=starter&utm_medium=start-page&utm_campaign=minimal-starter`}
-          >
-            {docLink.text}
+    <Main>
+      <div className="header">
+        <h1>Geletka+ Pattern Library</h1>
+        <p>
+          Code snippets generated using{" "}
+          <a href="https://carbon.now.sh/" alt="Carbon" target="blank">
+            Carbon
           </a>
-        </li>
-        {links.map(link => (
-          <li key={link.url} style={{ ...listItemStyles, color: link.color }}>
-            <span>
-              <a
-                style={linkStyle}
-                href={`${link.url}?utm_source=starter&utm_medium=start-page&utm_campaign=minimal-starter`}
-              >
-                {link.text}
-              </a>
-              {link.badge && (
-                <span style={badgeStyle} aria-label="New Badge">
-                  NEW!
-                </span>
-              )}
-              <p style={descriptionStyle}>{link.description}</p>
-            </span>
-          </li>
-        ))}
-      </ul>
-      <img
-        alt="Gatsby G Logo"
-        src="data:image/svg+xml,%3Csvg width='24' height='24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 2a10 10 0 110 20 10 10 0 010-20zm0 2c-3.73 0-6.86 2.55-7.75 6L14 19.75c3.45-.89 6-4.02 6-7.75h-5.25v1.5h3.45a6.37 6.37 0 01-3.89 4.44L6.06 9.69C7 7.31 9.3 5.63 12 5.63c2.13 0 4 1.04 5.18 2.65l1.23-1.06A7.959 7.959 0 0012 4zm-8 8a8 8 0 008 8c.04 0 .09 0-8-8z' fill='%23639'/%3E%3C/svg%3E"
-      />
-    </main>
-  )
-}
+          .
+        </p>
+      </div>
+      <div className="content">
+        <dl>
+          <dt>Button</dt>
+          <dd>
+            <Button
+              buttonText={"Button text"}
+              background={"transparent"}
+              border={"2px solid red"}
+              fontFamily={"arial"}
+              color={"red"}
+              onClick={console.log("Hello world")}
+            />
+            <div class="code-container">
+              <iframe
+                src="https://carbon.now.sh/embed?bg=rgba%28171%2C184%2C195%2C1%29&t=nord&wt=none&l=jsx&width=680&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=56px&ph=56px&ln=false&fl=1&fm=Hack&fs=14px&lh=133%25&si=false&es=2x&wm=false&code=import%2520React%2520from%2520%2522react%2522%253B%250Aimport%2520styled%2520from%2520%2522styled-components%2522%253B%250A%250Aconst%2520StyledButton%2520%253D%2520styled.button%2560%250A%2520%2520display%253A%2520inline-block%253B%250A%2520%2520border-radius%253A%252018px%253B%250A%2520%2520padding%253A%25200.5rem%25201.5rem%253B%250A%2520%2520width%253A%25209rem%253B%250A%2520%2520font-weight%253A%2520700%253B%250A%2520%2520vertical-align%253A%2520center%253B%250A%2520%2520font-size%253A%25200.9rem%253B%250A%250A%250A%2520%2520%2526%253Ahover%2520%257B%250A%2520%2520%2520%2520cursor%253A%2520pointer%253B%250A%250A%2520%2520%257D%250A%250A%2520%2520%2526%253Aactive%2520%257B%250A%2520%2520%2520%2520transform%253A%2520translateY%282px%29%253B%250A%2520%2520%257D%250A%257D%250A%2560%253B%250A%250Aconst%2520Button%2520%253D%2520%28%257B%250A%2520%2520buttonText%252C%250A%2520%2520background%252C%250A%2520%2520color%252C%250A%2520%2520border%252C%250A%2520%2520fontFamily%252C%250A%2520%2520margin%252C%250A%257D%29%2520%253D%253E%2520%257B%250A%2520%2520return%2520%28%250A%2520%2520%2520%2520%253CStyledButton%2520style%253D%257B%257B%2520background%252C%2520color%252C%2520border%252C%2520fontFamily%252C%2520margin%2520%257D%257D%253E%250A%2520%2520%2520%2520%2520%2520%257BbuttonText%257D%250A%2520%2520%2520%2520%253C%252FStyledButton%253E%250A%2520%2520%29%253B%250A%257D%253B%250A%250Aexport%2520default%2520Button%253B"
+                sandbox="allow-scripts allow-same-origin"
+              />
+            </div>
+          </dd>
+        </dl>
+      </div>
+    </Main>
+  );
+};
 
-export default IndexPage
-
-export const Head = () => <title>Home Page</title>
+export default IndexPage;
