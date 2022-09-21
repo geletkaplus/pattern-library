@@ -7,7 +7,6 @@ const StyledLayout = styled.div`
   font-family: arial;
   display: flex;
   flex-direction: column;
-  font-family: arial;
   height: 100%;
 
   html {
