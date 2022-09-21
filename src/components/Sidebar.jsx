@@ -37,17 +37,17 @@ const Sidebar = () => {
         <div className="list-container">
           <dt>Components</dt>
           <dd>
-            <Link href="#" alt="button">
+            <Link to="../ButtonPage" alt="button">
               Button
             </Link>
           </dd>
           <dd>
-            <Link href="#" alt="carousel">
+            <Link to="#" alt="carousel">
               Carousel
             </Link>
           </dd>
           <dd>
-            <Link href="#" alt="dropdownt">
+            <Link to="#" alt="dropdownt">
               Dropdown
             </Link>
           </dd>
@@ -56,17 +56,17 @@ const Sidebar = () => {
         <div className="list-container">
           <dt>Guidelines</dt>
           <dd>
-            <Link href="#" alt="color">
+            <Link to="#" alt="color">
               Color
             </Link>
           </dd>
           <dd>
-            <Link href="#" alt="typography">
+            <Link to="#" alt="typography">
               Typography
             </Link>
           </dd>
           <dd>
-            <Link href="#" rel="media queries">
+            <Link to="#" rel="media queries">
               Media queries
             </Link>
           </dd>

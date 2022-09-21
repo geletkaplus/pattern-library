@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "gatsby";
 
 const StyledGeletkaHeader = styled.div`
   display: flex;
@@ -11,6 +12,10 @@ const StyledGeletkaHeader = styled.div`
     font-size: 2rem;
     letter-spacing: 2rem;
     text-transform: uppercase;
+
+    a {
+      color: black;
+    }
   }
 
   p {
@@ -21,7 +26,11 @@ const StyledGeletkaHeader = styled.div`
 const GeletkaHeader = () => {
   return (
     <StyledGeletkaHeader>
-      <h1>Geletka+ Pattern Library</h1>
+      <h1>
+        <Link to="/" rel="homepage">
+          Geletka+ Pattern Library
+        </Link>
+      </h1>
       <p>
         Code snippets generated using{" "}
         <a href="https://carbon.now.sh/" alt="Carbon" target="blank">

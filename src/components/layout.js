@@ -37,7 +37,7 @@ export default function Layout({ children }) {
   return (
     <StyledLayout>
       <GeletkaHeader />
-      <div class="info">
+      <div className="info">
         <Sidebar />
         {children}
       </div>
