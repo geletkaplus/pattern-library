@@ -10,16 +10,13 @@ const StyledButton = styled.button`
   vertical-align: center;
   font-size: 0.9rem;
 
-
   &:hover {
     cursor: pointer;
-
   }
 
   &:active {
     transform: translateY(2px);
   }
-}
 `;
 
 const Button = ({
