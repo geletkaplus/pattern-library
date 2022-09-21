@@ -21,7 +21,7 @@ const ButtonPage = () => {
             color={"red"}
             border={"2px solid red"}
             fontFamily={"monospace"}
-            margin={"none"}
+            margin={"0"}
             buttonText={"Button text"}
           />
         </div>

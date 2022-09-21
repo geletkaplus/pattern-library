@@ -6,8 +6,9 @@ const StyledPatternTemplate = styled.div`
 
   h3 {
     text-transform: uppercase;
-    letter-spacing: 0.3rem;
+    letter-spacing: 0.5rem;
     margin: 0 0 3rem 4rem;
+    font-size: 1.5rem;
   }
 
   iframe {
