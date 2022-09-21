@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "gatsby";
 
 const StyledSidebar = styled.div`
   border-right: 1px solid black;
@@ -36,38 +37,38 @@ const Sidebar = () => {
         <div className="list-container">
           <dt>Components</dt>
           <dd>
-            <a href="#" alt="button">
+            <Link href="#" alt="button">
               Button
-            </a>
+            </Link>
           </dd>
           <dd>
-            <a href="#" alt="carousel">
+            <Link href="#" alt="carousel">
               Carousel
-            </a>
+            </Link>
           </dd>
           <dd>
-            <a href="#" alt="dropdownt">
+            <Link href="#" alt="dropdownt">
               Dropdown
-            </a>
+            </Link>
           </dd>
         </div>
 
         <div className="list-container">
           <dt>Guidelines</dt>
           <dd>
-            <a href="#" alt="color">
+            <Link href="#" alt="color">
               Color
-            </a>
+            </Link>
           </dd>
           <dd>
-            <a href="#" alt="typography">
+            <Link href="#" alt="typography">
               Typography
-            </a>
+            </Link>
           </dd>
           <dd>
-            <a href="#" rel="media queries">
+            <Link href="#" rel="media queries">
               Media queries
-            </a>
+            </Link>
           </dd>
         </div>
       </dl>
