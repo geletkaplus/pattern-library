@@ -9,10 +9,6 @@ const StyledSidebar = styled.div`
   flex-direction: column;
   padding: 1rem 1rem 1rem 2rem;
 
-  a {
-    text-decoration: none;
-  }
-
   dl {
     gap: 2rem;
   }
@@ -50,8 +46,8 @@ const Sidebar = () => {
             </a>
           </dd>
           <dd>
-            <a href="#" alt="checkbox">
-              Checkbox
+            <a href="#" alt="dropdownt">
+              Dropdown
             </a>
           </dd>
         </div>
