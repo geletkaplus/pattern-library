@@ -1,5 +1,4 @@
 import React from "react";
-import Layout from "../components/layout";
 import PatternTemplate from "../components/PatternTemplate";
 import Button from "../components/patterns/Button";
 import CodeSnippet from "../components/CodeSnippet";
