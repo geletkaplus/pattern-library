@@ -48,7 +48,7 @@ const Sidebar = () => {
             <Link to="../accordion">Accordion</Link>
           </dd>
           <dd>
-            <Link to="#">Dropdown</Link>
+            <Link to="../dropdown">Dropdown</Link>
           </dd>
         </div>
 
