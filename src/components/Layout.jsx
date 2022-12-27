@@ -1,7 +1,7 @@
-import React from "react";
-import styled from "styled-components";
-import GeletkaHeader from "./GeletkaHeader";
-import Sidebar from "./Sidebar";
+import React from 'react';
+import styled from 'styled-components';
+import GeletkaHeader from './GeletkaHeader';
+import Sidebar from './Sidebar';
 
 const StyledLayout = styled.div`
   font-family: arial;
@@ -15,11 +15,6 @@ const StyledLayout = styled.div`
 
   body {
     min-height: 100%;
-  }
-
-  a {
-    color: red;
-    text-decoration: none;
   }
 
   .info {
