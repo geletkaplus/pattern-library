@@ -1,6 +1,6 @@
-import React from "react";
-import styled from "styled-components";
-import { Link } from "gatsby";
+import React from 'react';
+import styled from 'styled-components';
+import { Link } from 'gatsby';
 
 const StyledSidebar = styled.div`
   border-right: 1px solid black;
@@ -9,6 +9,11 @@ const StyledSidebar = styled.div`
   display: flex;
   flex-direction: column;
   padding: 1rem 1rem 1rem 2rem;
+
+  a {
+    color: red;
+    text-decoration: none;
+  }
 
   dl {
     gap: 2rem;
@@ -37,19 +42,13 @@ const Sidebar = () => {
         <div className="list-container">
           <dt>Components</dt>
           <dd>
-            <Link to="../ButtonPage" alt="button">
-              Button
-            </Link>
+            <Link to="../button">Button</Link>
           </dd>
           <dd>
-            <Link to="#" alt="carousel">
-              Carousel
-            </Link>
+            <Link to="../accordion">Accordion</Link>
           </dd>
           <dd>
-            <Link to="#" alt="dropdownt">
-              Dropdown
-            </Link>
+            <Link to="#">Dropdown</Link>
           </dd>
         </div>
 

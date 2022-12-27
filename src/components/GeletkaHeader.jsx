@@ -1,6 +1,6 @@
-import React from "react";
-import styled from "styled-components";
-import { Link } from "gatsby";
+import React from 'react';
+import styled from 'styled-components';
+import { Link } from 'gatsby';
 
 const StyledGeletkaHeader = styled.div`
   display: flex;
@@ -18,6 +18,11 @@ const StyledGeletkaHeader = styled.div`
     }
   }
 
+  a {
+    color: red;
+    text-decoration: none;
+  }
+
   p {
     color: gray;
   }
@@ -32,7 +37,7 @@ const GeletkaHeader = () => {
         </Link>
       </h1>
       <p>
-        Code snippets generated using{" "}
+        Code snippets generated using{' '}
         <a href="https://carbon.now.sh/" alt="Carbon" target="blank">
           Carbon
         </a>
