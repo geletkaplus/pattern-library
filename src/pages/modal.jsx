@@ -10,7 +10,7 @@ const ModalPage = () => {
       height={'60rem'}
     >
       <Modal
-        modalText={'Hello'}
+        modalText={'This is a modal'}
         toggleText={'View modal'}
         closeText={'Close modal'}
       />
