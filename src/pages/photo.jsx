@@ -12,9 +12,7 @@ const PhotoPage = () => {
       }
       height={'60rem'}
     >
-      <div style={{ paddingLeft: 4 + 'rem' }}>
-        <FullWidthPhoto altText={'this is photo'} />
-      </div>
+      <FullWidthPhoto altText={'this is photo'} />
     </PatternTemplate>
   );
 };

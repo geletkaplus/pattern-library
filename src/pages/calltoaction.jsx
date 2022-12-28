@@ -12,11 +12,9 @@ const CallToActionPage = () => {
       }
       height={'60rem'}
     >
-      <div style={{ paddingLeft: 4 + 'rem' }}>
-        <CallToAction title={'Call to Action Title'} />
-        <p>Call to action content</p>
-        <CallToAction />
-      </div>
+      <CallToAction title={'Call to Action Title'} />
+      <p>Call to action content</p>
+      <CallToAction />
     </PatternTemplate>
   );
 };

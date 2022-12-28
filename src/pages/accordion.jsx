@@ -29,9 +29,7 @@ const AccordionPage = () => {
       }
       height={'60rem'}
     >
-      <div style={{ paddingLeft: 4 + 'rem' }}>
-        <Accordion accordionList={accordionListExample} />
-      </div>
+      <Accordion accordionList={accordionListExample} />
     </PatternTemplate>
   );
 };

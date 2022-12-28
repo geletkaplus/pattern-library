@@ -12,15 +12,13 @@ const CardPage = () => {
       }
       height={'60rem'}
     >
-      <div style={{ paddingLeft: 4 + 'rem' }}>
-        <Card
-          heading={'Heading'}
-          content={'Content'}
-          link={'/'}
-          linkText={'text'}
-          imageDescription={'image description'}
-        ></Card>
-      </div>
+      <Card
+        heading={'Heading'}
+        content={'Content'}
+        link={'/'}
+        linkText={'text'}
+        imageDescription={'image description'}
+      ></Card>
     </PatternTemplate>
   );
 };

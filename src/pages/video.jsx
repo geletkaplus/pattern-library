@@ -12,9 +12,7 @@ const VideoPage = () => {
       }
       height={'60rem'}
     >
-      <div style={{ paddingLeft: 4 + 'rem' }}>
-        <FullWidthVideo />
-      </div>
+      <FullWidthVideo />
     </PatternTemplate>
   );
 };

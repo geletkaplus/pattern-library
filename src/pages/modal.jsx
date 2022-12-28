@@ -12,9 +12,7 @@ const ModalPage = () => {
       }
       height={'60rem'}
     >
-      <div style={{ paddingLeft: 4 + 'rem' }}>
-        <Modal />
-      </div>
+      <Modal />
     </PatternTemplate>
   );
 };

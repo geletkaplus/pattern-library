@@ -12,9 +12,7 @@ const NavPage = () => {
       }
       height={'60rem'}
     >
-      <div style={{ paddingLeft: 4 + 'rem' }}>
-        <Nav />
-      </div>
+      <Nav />
     </PatternTemplate>
   );
 };

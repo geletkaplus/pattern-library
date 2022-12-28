@@ -12,9 +12,7 @@ const ToolTipPage = () => {
       }
       height={'60rem'}
     >
-      <div style={{ paddingLeft: 4 + 'rem' }}>
-        <ToolTip text={'heloooo'}>hello</ToolTip>
-      </div>
+      <ToolTip text={'heloooo'}>hello</ToolTip>
     </PatternTemplate>
   );
 };

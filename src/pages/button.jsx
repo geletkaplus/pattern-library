@@ -16,14 +16,12 @@ const ButtonPage = () => {
       }
       height={'60rem'}
     >
-      <div style={{ paddingLeft: 4 + 'rem' }}>
-        <Button link="#" buttonText={'Primary Button'} />
-        <Button
-          secondary
-          func={() => example('test')}
-          buttonText={'Secondary Button'}
-        />
-      </div>
+      <Button link="#" buttonText={'Primary Button'} />
+      <Button
+        secondary
+        func={() => example('test')}
+        buttonText={'Secondary Button'}
+      />
     </PatternTemplate>
   );
 };
