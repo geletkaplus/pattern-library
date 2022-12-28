@@ -6,13 +6,12 @@ const StyledPatternTemplate = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  width: 100%;
 
   h3 {
     text-transform: uppercase;
     letter-spacing: 0.5rem;
+    margin: 0 0 3rem 4rem;
     font-size: 1.5rem;
-    margin-top: 0;
   }
 
   iframe {
@@ -25,15 +24,10 @@ const StyledPatternTemplate = styled.div`
   }
 
   .example-container {
+    padding-left: 4rem;
     display: flex;
     flex-direction: column;
     gap: 0.875rem;
-    width: 100%;
-  }
-
-  .hidden-container {
-    display: flex;
-    width: 100%;
   }
 `;
 
@@ -53,20 +47,23 @@ const PatternTemplate = ({
   return (
     <StyledPatternTemplate>
       <h3>{componentName}</h3>
-      <div className="example-container">{children}</div>
-      {src && (
-        <>
-          <button onClick={toggleContainer}>View code</button>
-          {visible && (
-            <iframe
-              title={frameTitle}
-              src={src}
-              style={{ height }}
-              sandbox="allow-scripts allow-same-origin"
-            />
-          )}
-        </>
-      )}
+      <button onClick={toggleContainer}>View</button>
+
+      <div id="hidden-container">
+        {visible && (
+          <>
+            <div className="example-container">{children}</div>
+            {src && (
+              <iframe
+                title={frameTitle}
+                src={src}
+                style={{ height }}
+                sandbox="allow-scripts allow-same-origin"
+              />
+            )}
+          </>
+        )}
+      </div>
     </StyledPatternTemplate>
   );
 };

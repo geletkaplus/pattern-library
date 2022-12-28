@@ -19,8 +19,7 @@ const StyledModal = styled.div`
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    max-width: 70%;
-    width: 100%;
+    min-width: 15rem;
 
     button {
       max-width: 7rem;
@@ -36,12 +35,6 @@ const StyledModal = styled.div`
     left: 50%;
     transform: translate(-50%, -50%);
     position: fixed;
-  }
-
-  .actions {
-    display: flex;
-    justify-content: flex-end;
-    flex-wrap: wrap;
   }
 `;
 
@@ -66,13 +59,11 @@ const Modal = ({ toggleText, modalText, closeText }) => {
       {show && (
         <div className="modal" ref={wrapperRef}>
           {modalText}
-          <div className="actions">
-            <Button
-              func={console.log('You clicked the submit button')}
-              buttonText={'Submit'}
-            />
-            <Button secondary func={closeInput} buttonText={'Close'} />
-          </div>
+          <Button
+            func={console.log('You clicked the submit button')}
+            buttonText={'Submit'}
+          />
+          <Button secondary func={closeInput} buttonText={'Close'} />
         </div>
       )}
     </StyledModal>
