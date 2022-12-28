@@ -5,6 +5,7 @@ const StyledPatternTemplate = styled.div`
   padding: 2rem 1rem;
   display: flex;
   flex-direction: column;
+  gap: 1rem;
 
   h3 {
     text-transform: uppercase;
@@ -49,7 +50,7 @@ const PatternTemplate = ({
       <button onClick={toggleContainer}>View</button>
 
       <div id="hidden-container">
-        {visible ? (
+        {visible && (
           <>
             <div className="example-container">{children}</div>
             {src && (
@@ -61,7 +62,7 @@ const PatternTemplate = ({
               />
             )}
           </>
-        ) : null}
+        )}
       </div>
     </StyledPatternTemplate>
   );
