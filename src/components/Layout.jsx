@@ -23,6 +23,10 @@ const StyledLayout = styled.div`
   #___gatsby {
     height: 100%;
   }
+
+  .children {
+    padding: 2rem 1rem;
+  }
 `;
 
 export default function Layout({ children }) {
@@ -31,7 +35,7 @@ export default function Layout({ children }) {
       <GeletkaHeader />
       <div className="info">
         <Sidebar />
-        {children}
+        <div className="children">{children}</div>
       </div>
     </StyledLayout>
   );
