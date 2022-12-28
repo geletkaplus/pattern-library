@@ -2,52 +2,55 @@ import React from 'react';
 import styled from 'styled-components';
 
 const StyledButton = styled.div`
-  button,
-  a {
-    display: inline-block;
+  display: flex;
+
+  a,
+  button {
+    padding: 0.5rem 1rem;
     text-decoration: none;
-    border-radius: 18px;
-    padding: 0.5rem 1.5rem;
-    width: 10rem;
-    height: 3rem;
-    font-weight: 700;
-    vertical-align: center;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    border-radius: 5px;
+    outline: none;
+    color: white;
+    cursor: pointer;
+    margin: 0.5rem;
+  }
 
-    &:hover {
-      cursor: pointer;
-    }
+  .primary {
+    border: 2px solid #96adb9;
+    background: #a0c1d3;
 
-    &:active {
-      transform: translateY(2px);
+    :hover,
+    :focus {
+      background-color: white;
+      color: #96adb9;
     }
   }
 
-  .secondary > a,
-  .secondary > button {
-    border-radius: 4px;
-    padding: 0.5rem 1rem;
-    font-weight: 700;
-    vertical-align: center;
-    font-size: 0.875rem;
+  .secondary {
+    border: 2px solid #9898a3;
+    background: #a6a6ac;
 
-    &:hover {
-      cursor: pointer;
-    }
-
-    &:active {
-      transform: translateY(2px);
+    :hover,
+    :focus {
+      background-color: white;
+      color: #9898a3;
     }
   }
 `;
 
 const Button = ({ buttonText, secondary, link, func }) => {
   return (
-    <StyledButton className={secondary ? 'secondary' : ''}>
+    <StyledButton>
       {link ? (
-        <a href={link}>{buttonText}</a>
+        <a className={secondary ? 'secondary' : 'primary'} href={link}>
+          {buttonText}
+        </a>
       ) : (
-        <button onClick={func}>{buttonText}</button>
+        <button className={secondary ? 'secondary' : 'primary'} onClick={func}>
+          {buttonText}
+        </button>
       )}
     </StyledButton>
   );
