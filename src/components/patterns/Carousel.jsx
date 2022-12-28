@@ -3,45 +3,6 @@ import { useSwipeable } from 'react-swipeable';
 import styled from 'styled-components';
 
 const StyledCarousel = styled.div`
-  /* display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-width: 10rem;
-  gap: 1rem;
-  border: 1px solid gray;
-  border-radius: 5px; */
-
-  /* .right-arrow,
-  .left-arrow {
-    position: absolute;
-    top: 50%;
-    font-size: 2rem;
-  } */
-
-  /* .right-arrow {
-    right: 1.5rem;
-  }
-
-  .left-arrow {
-    left: 1.5rem;
-  } */
-
-  /* .slide-image {
-    object-fit: cover;
-    display: flex;
-    width: 100%;
-  }
-
-  .arrows-container {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-  }
-
-  .arrow {
-    padding: 0.5rem;
-  } */
-
   .carousel {
     overflow: hidden;
   }
@@ -59,10 +20,13 @@ const StyledCarousel = styled.div`
     background-color: red;
     color: white;
     width: 100%;
+    height: 25rem;
 
     img {
       object-fit: cover;
       overflow: hidden;
+      height: 100%;
+      width: 100%;
     }
   }
 
@@ -76,6 +40,11 @@ const StyledCarousel = styled.div`
     padding: 0;
     border: none;
     background: white;
+    cursor: pointer;
+
+    :hover {
+      text-decoration: underline;
+    }
   }
 
   .num-container > button {
@@ -148,7 +117,7 @@ const Carousel = ({ children }) => {
               updateIndex(activeIndex - 1);
             }}
           >
-            Prev
+            PREV
           </button>
           <div className="num-container">
             {React.Children.map(children, (child, index) => {
@@ -169,7 +138,7 @@ const Carousel = ({ children }) => {
               updateIndex(activeIndex + 1);
             }}
           >
-            Next
+            NEXT
           </button>
         </div>
       </div>
