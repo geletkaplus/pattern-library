@@ -1,7 +1,6 @@
 import React from 'react';
 import PatternTemplate from '../components/PatternTemplate';
 import Accordion from '../components/patterns/Accordion';
-import CodeSnippet from '../components/CodeSnippet';
 
 const AccordionPage = () => {
   const accordionListExample = [

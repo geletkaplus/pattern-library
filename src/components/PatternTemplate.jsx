@@ -1,8 +1,10 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
 const StyledPatternTemplate = styled.div`
   padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
 
   h3 {
     text-transform: uppercase;
@@ -19,6 +21,13 @@ const StyledPatternTemplate = styled.div`
     overflow: hidden;
     margin: 1rem 0;
   }
+
+  .example-container {
+    padding-left: 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.875rem;
+  }
 `;
 
 const PatternTemplate = ({
@@ -32,16 +41,16 @@ const PatternTemplate = ({
     <StyledPatternTemplate>
       <h3>{componentName}</h3>
 
-      {children}
+      <div className="example-container">{children}</div>
 
-      <div>
+      {src && (
         <iframe
           title={frameTitle}
           src={src}
           style={{ height }}
           sandbox="allow-scripts allow-same-origin"
         />
-      </div>
+      )}
     </StyledPatternTemplate>
   );
 };
