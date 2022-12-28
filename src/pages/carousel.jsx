@@ -1,5 +1,5 @@
 import React from 'react';
-import Carousel from '../components/patterns/Carousel';
+import Carousel, { CarouselItem } from '../components/patterns/Carousel';
 import PatternTemplate from '../components/PatternTemplate';
 
 const CarouselPage = () => {
@@ -9,7 +9,7 @@ const CarouselPage = () => {
       alt: 'cat 1',
     },
     {
-      image: '../images/image-2.jpg',
+      image: '.ooooll./images/image-2.jpg',
       alt: 'cat 2',
     },
     {
@@ -28,7 +28,11 @@ const CarouselPage = () => {
       frameTitle={'Carousel'}
       height={'60rem'}
     >
-      <Carousel slides={imageData} />
+      <Carousel>
+        <CarouselItem>Item 1</CarouselItem>
+        <CarouselItem>Item 2</CarouselItem>
+        <CarouselItem>Item 3</CarouselItem>
+      </Carousel>
     </PatternTemplate>
   );
 };
