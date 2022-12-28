@@ -1,5 +1,6 @@
 import React from 'react';
 import Carousel, { CarouselItem } from '../components/patterns/Carousel';
+import image from '../images/image-3.jpg';
 import PatternTemplate from '../components/PatternTemplate';
 
 const CarouselPage = () => {
@@ -29,7 +30,9 @@ const CarouselPage = () => {
       height={'60rem'}
     >
       <Carousel>
-        <CarouselItem>Item 1</CarouselItem>
+        <CarouselItem>
+          <img src={image} />
+        </CarouselItem>
         <CarouselItem>Item 2</CarouselItem>
         <CarouselItem>Item 3</CarouselItem>
       </Carousel>

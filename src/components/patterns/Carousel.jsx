@@ -1,7 +1,6 @@
-// import React, { useState } from 'react';
-import styled from 'styled-components';
 import React, { useEffect, useState } from 'react';
 import { useSwipeable } from 'react-swipeable';
+import styled from 'styled-components';
 
 const StyledCarousel = styled.div`
   /* display: flex;
@@ -60,6 +59,11 @@ const StyledCarousel = styled.div`
     background-color: red;
     color: white;
     width: 100%;
+
+    img {
+      object-fit: cover;
+      overflow: hidden;
+    }
   }
 
   .indicators {

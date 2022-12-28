@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Button from './patterns/Button';
 import styled from 'styled-components';
 
 const StyledPatternTemplate = styled.div`
