@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
 const StyledPatternTemplate = styled.div`
@@ -37,20 +37,32 @@ const PatternTemplate = ({
   src,
   height,
 }) => {
+  const [visible, setVisible] = useState(false);
+
+  const toggleContainer = () => {
+    setVisible(!visible);
+  };
+
   return (
     <StyledPatternTemplate>
       <h3>{componentName}</h3>
+      <button onClick={toggleContainer}>View</button>
 
-      <div className="example-container">{children}</div>
-
-      {src && (
-        <iframe
-          title={frameTitle}
-          src={src}
-          style={{ height }}
-          sandbox="allow-scripts allow-same-origin"
-        />
-      )}
+      <div id="hidden-container">
+        {visible ? (
+          <>
+            <div className="example-container">{children}</div>
+            {src && (
+              <iframe
+                title={frameTitle}
+                src={src}
+                style={{ height }}
+                sandbox="allow-scripts allow-same-origin"
+              />
+            )}
+          </>
+        ) : null}
+      </div>
     </StyledPatternTemplate>
   );
 };
