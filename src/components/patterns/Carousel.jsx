@@ -59,7 +59,6 @@ const StyledCarousel = styled.div`
     min-height: 10rem;
     background-color: red;
     color: white;
-    border-radius: 5px;
     width: 100%;
   }
 
