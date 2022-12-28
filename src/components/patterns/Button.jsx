@@ -23,15 +23,13 @@ const StyledButton = styled.div`
     }
   }
 
-  .secondary {
-    display: inline-block;
+  .secondary > a,
+  .secondary > button {
     border-radius: 4px;
-    padding: 0.5rem 1.5rem;
-    width: 10rem;
-    height: 3rem;
+    padding: 0.5rem 1rem;
     font-weight: 700;
     vertical-align: center;
-    font-size: 0.9rem;
+    font-size: 0.875rem;
 
     &:hover {
       cursor: pointer;

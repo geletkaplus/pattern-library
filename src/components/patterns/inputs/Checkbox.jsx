@@ -6,8 +6,8 @@ const StyledCheckbox = styled.label``;
 const Checkbox = ({ label }) => {
   return (
     <StyledCheckbox>
-      {label}
       <input type={'checkbox'} />
+      {label}
     </StyledCheckbox>
   );
 };

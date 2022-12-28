@@ -5,24 +5,18 @@ import styled from 'styled-components';
 
 const StyledAccordion = styled.dl`
   max-width: 72.375rem;
-  margin: 4.25rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
 
   dt {
     display: flex;
     justify-content: space-between;
-    font-size: 2rem;
-    /* background: var(--light-gray);
-      border: 1px solid var(--gray); */
-    padding: 1.625rem 1.875rem;
     cursor: pointer;
-
-    :hover {
-      /* background-color: var(--primary); */
-    }
+    color: red;
   }
 
   dd {
-    padding: 2.625rem 5.375rem;
     border: 1px solid var(--gray);
     border-top: none;
     border-bottom: none;
@@ -30,31 +24,8 @@ const StyledAccordion = styled.dl`
     display: flex;
     flex-direction: column;
     gap: 1rem;
-
-    :last-of-type {
-      border-bottom: 1px solid var(--gray);
-    }
-
-    p {
-      margin: 0;
-      padding: 0;
-    }
-  }
-
-  @media (max-width: 750px) {
-    margin: 1.5rem;
-
-    dt {
-      div {
-        line-height: 1.625rem;
-        font-size: 1.5rem;
-      }
-    }
-
-    dd {
-      padding: 1.75rem;
-      line-height: 1.25rem;
-    }
+    padding: 1rem;
+    margin: 0;
   }
 `;
 
