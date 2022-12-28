@@ -7,13 +7,18 @@ const StyledAccordion = styled.dl`
   max-width: 72.375rem;
   display: flex;
   flex-direction: column;
-  gap: 0.875rem;
+  gap: 2.5rem;
 
   dt {
     display: flex;
     justify-content: space-between;
     cursor: pointer;
     color: red;
+
+    img {
+      width: 1rem;
+      height: 1rem;
+    }
   }
 
   dd {
@@ -24,8 +29,14 @@ const StyledAccordion = styled.dl`
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    padding: 1rem;
+    padding-left: 1rem;
     margin: 0;
+  }
+
+  .list-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
   }
 `;
 
@@ -56,23 +67,25 @@ const Accordion = ({ accordionList }) => {
     <StyledAccordion>
       {accordionList.map((acc, idx) => (
         <React.Fragment key={idx}>
-          <dt
-            onClick={() => toggleAccordion(idx)}
-            onKeyDown={e => handleKeyboardListener(e, idx)}
-            onFocus={e => handleFocus(e, idx)}
-            onBlur={e => handleFocus(e, idx)}
-            aria-expanded={open[idx]}
-            tabIndex={'0'}
-            role="button"
-          >
-            {acc.title}{' '}
-            {open[idx] ? (
-              <img src={downArrow} alt="collapse accordion" />
-            ) : (
-              <img src={rightArrow} alt="open accordion" />
-            )}
-          </dt>
-          {open[idx] && <dd>{acc.content}</dd>}
+          <div className="list-group">
+            <dt
+              onClick={() => toggleAccordion(idx)}
+              onKeyDown={e => handleKeyboardListener(e, idx)}
+              onFocus={e => handleFocus(e, idx)}
+              onBlur={e => handleFocus(e, idx)}
+              aria-expanded={open[idx]}
+              tabIndex={'0'}
+              role="button"
+            >
+              {acc.title}{' '}
+              {open[idx] ? (
+                <img src={downArrow} alt="collapse accordion" />
+              ) : (
+                <img src={rightArrow} alt="open accordion" />
+              )}
+            </dt>
+            {open[idx] && <dd>{acc.content}</dd>}
+          </div>
         </React.Fragment>
       ))}
     </StyledAccordion>

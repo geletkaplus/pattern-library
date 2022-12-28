@@ -17,7 +17,7 @@ const StyledCarousel = styled.div`
     align-items: center;
     justify-content: center;
     min-height: 10rem;
-    background-color: red;
+    background: gray;
     color: white;
     width: 100%;
     height: 25rem;

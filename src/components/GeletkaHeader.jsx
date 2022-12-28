@@ -1,12 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
+import Button from './patterns/Button';
 import { Link } from 'gatsby';
 
 const StyledGeletkaHeader = styled.div`
   display: flex;
   flex-direction: column;
-  border-bottom: 1px solid black;
-  padding: 2rem;
+  border-bottom: 2px solid gray;
+  padding-bottom: 2rem;
 
   h1 {
     font-size: 2rem;
@@ -29,6 +30,12 @@ const StyledGeletkaHeader = styled.div`
 `;
 
 const GeletkaHeader = () => {
+  const [showNav, setShowNav] = useState(false);
+
+  const toggleNav = () => {
+    setShowNav(!showNav);
+  };
+
   return (
     <StyledGeletkaHeader>
       <h1>
@@ -48,6 +55,7 @@ const GeletkaHeader = () => {
         "carbon.now.sh/" and before "?bg=rgba" to create a src attribute for the
         CodeSnippet.jsx component.
       </p>
+      <Button buttonText={'View options'} func={toggleNav} />
     </StyledGeletkaHeader>
   );
 };

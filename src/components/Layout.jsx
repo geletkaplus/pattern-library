@@ -7,8 +7,7 @@ const StyledLayout = styled.div`
   font-family: arial;
   display: flex;
   flex-direction: column;
-  height: 100%;
-  padding: 2rem;
+  padding: 1rem;
 
   html,
   body {

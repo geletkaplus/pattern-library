@@ -3,12 +3,12 @@ import styled from 'styled-components';
 import { Link } from 'gatsby';
 
 const StyledSidebar = styled.div`
-  border-right: 1px solid black;
+  border-right: 2px solid gray;
   height: 100vh;
-  width: 15rem;
+  max-width: 15rem;
   display: flex;
   flex-direction: column;
-  padding: 1rem 1rem 1rem 2rem;
+  padding: 1rem 1rem 1rem 0;
 
   a {
     color: red;
@@ -16,12 +16,16 @@ const StyledSidebar = styled.div`
   }
 
   dl {
-    gap: 2rem;
+    gap: 4rem;
   }
 
   dt {
     text-transform: uppercase;
     letter-spacing: 0.3rem;
+  }
+
+  dd {
+    margin: 0;
   }
 
   dl,

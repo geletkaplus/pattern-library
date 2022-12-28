@@ -6,6 +6,7 @@ const StyledButton = styled.div`
 
   a,
   button {
+    display: flex;
     padding: 0.5rem 1rem;
     text-decoration: none;
     font-size: 0.8rem;
@@ -14,28 +15,27 @@ const StyledButton = styled.div`
     outline: none;
     color: white;
     cursor: pointer;
-    margin: 0.5rem;
   }
 
   .primary {
-    border: 2px solid #96adb9;
-    background: #a0c1d3;
+    border: 2px solid red;
+    background: red;
 
     :hover,
     :focus {
       background-color: white;
-      color: #96adb9;
+      color: red;
     }
   }
 
   .secondary {
-    border: 2px solid #9898a3;
-    background: #a6a6ac;
+    border: 2px solid gray;
+    background: gray;
 
     :hover,
     :focus {
       background-color: white;
-      color: #9898a3;
+      color: gray;
     }
   }
 `;
@@ -44,7 +44,11 @@ const Button = ({ buttonText, secondary, link, func }) => {
   return (
     <StyledButton>
       {link ? (
-        <a className={secondary ? 'secondary' : 'primary'} href={link}>
+        <a
+          className={secondary ? 'secondary' : 'primary'}
+          href={link}
+          target="_blank"
+        >
           {buttonText}
         </a>
       ) : (

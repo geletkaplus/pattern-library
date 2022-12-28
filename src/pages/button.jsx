@@ -13,14 +13,17 @@ const ButtonPage = () => {
       frameTitle={'button'}
       height={'60rem'}
     >
-      <Button link="#" buttonText={'Link button'} />
       <Button
-        func={() => console.log('Primary button clicked')}
+        link="https://www.ctvnews.ca/polopoly_fs/1.4692721.1574189694!/httpImage/image.jpg_gen/derivatives/landscape_620/image.jpg"
+        buttonText={'Link button'}
+      />
+      <Button
+        func={() => alert('You just clicked the primary button')}
         buttonText={'Primary Button'}
       />
       <Button
         secondary
-        func={() => console.log('Secondary button clicked')}
+        func={() => alert('You just clicked the secondary button')}
         buttonText={'Secondary Button'}
       />
     </PatternTemplate>
