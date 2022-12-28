@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react';
 import useClickOutside from '../../lib/useClickOutside';
+import Button from './Button';
 import styled from 'styled-components';
 
 const StyledModal = styled.div`
@@ -21,6 +22,7 @@ const StyledModal = styled.div`
     min-width: 15rem;
 
     button {
+      max-width: 7rem;
     }
   }
 
@@ -57,7 +59,11 @@ const Modal = ({ toggleText, modalText, closeText }) => {
       {show && (
         <div className="modal" ref={wrapperRef}>
           {modalText}
-          <button onClick={closeInput}>{closeText}</button>
+          <Button
+            func={console.log('You clicked the submit button')}
+            buttonText={'Submit'}
+          />
+          <Button secondary func={closeInput} buttonText={'Close'} />
         </div>
       )}
     </StyledModal>
