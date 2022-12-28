@@ -9,11 +9,9 @@ const ModalPage = () => {
       frameTitle={'Modal'}
       height={'60rem'}
     >
-      <Modal
-        modalText={'This is a modal'}
-        toggleText={'View modal'}
-        closeText={'Close modal'}
-      />
+      <Modal toggleText={'View modal'} closeText={'Close modal'}>
+        This is a modal
+      </Modal>
     </PatternTemplate>
   );
 };

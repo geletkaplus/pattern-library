@@ -45,7 +45,7 @@ const StyledModal = styled.div`
   }
 `;
 
-const Modal = ({ toggleText, modalText, closeText }) => {
+const Modal = ({ toggleText, children, closeText }) => {
   const [show, setShow] = useState(false);
   const wrapperRef = useRef(null);
 
@@ -65,7 +65,7 @@ const Modal = ({ toggleText, modalText, closeText }) => {
       <button onClick={showModal}>{toggleText}</button>
       {show && (
         <div className="modal" ref={wrapperRef}>
-          {modalText}
+          {children}
           <div className="actions">
             <Button
               func={console.log('You clicked the submit button')}
