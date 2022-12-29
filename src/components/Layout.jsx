@@ -15,10 +15,6 @@ const StyledLayout = styled.div`
     height: 100%;
   }
 
-  .info {
-    display: flex;
-  }
-
   #gatsby-focus-wrapper,
   #___gatsby {
     height: 100%;
@@ -26,6 +22,11 @@ const StyledLayout = styled.div`
 
   .children {
     padding: 2rem 1rem;
+  }
+
+  .info {
+    display: flex;
+    gap: 1rem;
   }
 `;
 
