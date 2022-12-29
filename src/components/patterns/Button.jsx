@@ -44,9 +44,15 @@ const Button = ({ buttonText, secondary, link, func }) => {
   return (
     <StyledButton>
       {link ? (
-        <a className={secondary ? 'secondary' : 'primary'} href={link}>
-          {buttonText}
-        </a>
+        link[0] !== '/' ? (
+          <a className={secondary ? 'secondary' : 'primary'} href={link}>
+            {buttonText}
+          </a>
+        ) : (
+          <Link to={link} className={secondary ? 'secondary' : 'primary'}>
+            {buttonText}
+          </Link>
+        )
       ) : (
         <button className={secondary ? 'secondary' : 'primary'} onClick={func}>
           {buttonText}
