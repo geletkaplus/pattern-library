@@ -20,13 +20,9 @@ const StyledLayout = styled.div`
     height: 100%;
   }
 
-  .children {
-    padding: 2rem 1rem;
-  }
-
   .info {
     display: flex;
-    gap: 1rem;
+    gap: 4rem;
   }
 `;
 

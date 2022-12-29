@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
 
@@ -19,30 +19,56 @@ const StyledGeletkaHeader = styled.div`
       text-decoration: none;
     }
   }
+
+  #input-cursor {
+    font-size: 2.875rem;
+    font-weight: 400;
+    vertical-align: center;
+    margin-left: -1rem;
+    display: inline-block;
+    animation: blink 0.6s linear infinite alternate;
+  }
+
+  @keyframes blink {
+    0% {
+      opacity: 1;
+    }
+    45% {
+      opacity: 1;
+    }
+    55% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
 `;
 
 const GeletkaHeader = () => {
+  async function typeSentence(sentence, eleRef, delay = 100) {
+    const letters = sentence.split('');
+    let i = 0;
+    while (i < letters.length) {
+      await waitForMs(delay);
+      document.getElementById(eleRef).append(letters[i]);
+      i++;
+    }
+    return;
+  }
+
+  function waitForMs(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
+
+  typeSentence('G+ Pattern Library', 'sentence');
+
   return (
     <StyledGeletkaHeader>
       <h1>
-        <Link to="/" rel="homepage">
-          G+ Pattern Library
-        </Link>
+        <Link id="sentence" to="/"></Link>
+        <span id="input-cursor">|</span>
       </h1>
-      {/* <div className="header-info">
-        <p>
-          Code snippets generated using{' '}
-          <a href="https://carbon.now.sh/" alt="Carbon" target="blank">
-            Carbon
-          </a>
-          .
-        </p>
-        <p>
-          To upload a code snippet, copy the URL and add "embed" after
-          "carbon.now.sh/" and before "?bg=rgba" to create a src attribute for
-          the CodeSnippet.jsx component.
-        </p>
-      </div> */}
     </StyledGeletkaHeader>
   );
 };
