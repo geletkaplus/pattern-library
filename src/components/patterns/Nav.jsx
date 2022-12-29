@@ -1,4 +1,8 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { Link } from 'gatsby';
+import { StaticImage } from 'gatsby-plugin-image';
+import { useWindowSize } from '../../lib/useWindowSize';
+import slugify from 'slugify';
 import styled from 'styled-components';
 
 const StyledNav = styled.nav`
@@ -21,22 +25,54 @@ const StyledNavLinks = styled.ul`
 
 const StyledSidebar = styled.nav``;
 
-const NavLinks = () => {
+const NavLinks = ({ navList }) => {
   return (
     <StyledNavLinks>
-      <li>hello</li>
+      <li>
+        <Link>
+          <StaticImage
+            src="../../images/image-3.jpg"
+            alt="<NAME OF PROJECT GOES HERE>"
+          />
+        </Link>
+      </li>
+      {navList ? (
+        navList.map(link => (
+          <li>
+            <Link to={`/${slugify(link, { lower: true, strict: true })}`}>
+              {link}
+            </Link>
+          </li>
+        ))
+      ) : (
+        <>
+          <li>
+            <Link to={`/blog`}>Articles</Link>
+          </li>
+        </>
+      )}
     </StyledNavLinks>
   );
 };
 
-const Nav = sidebar => {
-  return sidebar ? (
+const Nav = ({ logo, navList }) => {
+  const [sideBar, setSideBar] = useState(false);
+
+  const size = useWindowSize();
+
+  useEffect(() => {
+    if (size.width > 900) {
+      setSideBar(false);
+    }
+  }, [size]);
+
+  return sideBar ? (
     <StyledSidebar>
-      <NavLinks />
+      <NavLinks logo={logo} navList={navList} />
     </StyledSidebar>
   ) : (
     <StyledNav>
-      <NavLinks />
+      <NavLinks navList={navList} />
     </StyledNav>
   );
 };
