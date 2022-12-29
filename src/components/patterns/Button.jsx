@@ -15,6 +15,7 @@ const StyledButton = styled.div`
     outline: none;
     color: white;
     cursor: pointer;
+    justify-content: center;
   }
 
   .primary {
@@ -41,7 +42,7 @@ const StyledButton = styled.div`
 
 const Button = ({ buttonText, secondary, link, func }) => {
   return (
-    <StyledButton>
+    <StyledButton className="button">
       {link ? (
         <a
           className={secondary ? 'secondary' : 'primary'}

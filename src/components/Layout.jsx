@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import GeletkaHeader from './GeletkaHeader';
-import Sidebar from './Sidebar';
+import GeletkaNav from './GeletkaNav';
 
 const StyledLayout = styled.div`
   font-family: arial;
@@ -34,7 +34,7 @@ export default function Layout({ children }) {
     <StyledLayout>
       <GeletkaHeader />
       <div className="info">
-        <Sidebar />
+        <GeletkaNav />
         <div className="children">{children}</div>
       </div>
     </StyledLayout>

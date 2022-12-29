@@ -1,13 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
-import Button from './patterns/Button';
 import { Link } from 'gatsby';
 
 const StyledGeletkaHeader = styled.div`
   display: flex;
   flex-direction: column;
   border-bottom: 2px solid gray;
-  padding-bottom: 2rem;
+  padding-bottom: 1rem;
   gap: 1rem;
 
   h1 {
@@ -18,12 +17,20 @@ const StyledGeletkaHeader = styled.div`
 
     a {
       color: black;
+
+      :hover {
+        text-decoration: none;
+      }
     }
   }
 
   a {
     color: red;
     text-decoration: none;
+
+    :hover {
+      text-decoration: underline;
+    }
   }
 
   p {
@@ -37,12 +44,6 @@ const StyledGeletkaHeader = styled.div`
 `;
 
 const GeletkaHeader = () => {
-  const [showNav, setShowNav] = useState(false);
-
-  const toggleNav = () => {
-    setShowNav(!showNav);
-  };
-
   return (
     <StyledGeletkaHeader>
       <h1>
@@ -64,7 +65,6 @@ const GeletkaHeader = () => {
           the CodeSnippet.jsx component.
         </p>
       </div>
-      <Button buttonText={'View options'} func={toggleNav} />
     </StyledGeletkaHeader>
   );
 };
