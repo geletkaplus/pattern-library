@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
 
@@ -46,19 +46,23 @@ const StyledGeletkaHeader = styled.div`
 `;
 
 const GeletkaHeader = () => {
+  const [complete, setComplete] = useState(false);
+
+  function waitForMs(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
+
   async function typeSentence(sentence, eleRef, delay = 100) {
     const letters = sentence.split('');
     let i = 0;
     while (i < letters.length) {
       await waitForMs(delay);
-      document.getElementById(eleRef).append(letters[i]);
-      i++;
+      if (document.getElementById(eleRef).innerHTML !== sentence) {
+        document.getElementById(eleRef).append(letters[i]);
+        i++;
+      }
     }
     return;
-  }
-
-  function waitForMs(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
   }
 
   typeSentence('G+ Pattern Library', 'sentence');
@@ -66,7 +70,7 @@ const GeletkaHeader = () => {
   return (
     <StyledGeletkaHeader>
       <h1>
-        <Link id="sentence" to="/"></Link>
+        <Link id="sentence" to="/" />
         <span id="input-cursor">|</span>
       </h1>
     </StyledGeletkaHeader>

@@ -1,14 +1,14 @@
 import React from 'react';
 import PatternTemplate from '../components/PatternTemplate';
 
-const LibraryPage = () => {
+const ColorPage = () => {
   return (
     <PatternTemplate
-      componentName={'Library'}
-      frameTitle={'Library'}
+      componentName={'Color'}
+      frameTitle={'Color'}
       height={'60rem'}
     ></PatternTemplate>
   );
 };
 
-export default LibraryPage;
+export default ColorPage;

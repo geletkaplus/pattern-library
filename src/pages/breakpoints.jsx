@@ -1,14 +1,14 @@
 import React from 'react';
 import PatternTemplate from '../components/PatternTemplate';
 
-const LibraryPage = () => {
+const BreakpointPage = () => {
   return (
     <PatternTemplate
-      componentName={'Library'}
-      frameTitle={'Library'}
+      componentName={'Breakpoint'}
+      frameTitle={'Breakpoint'}
       height={'60rem'}
     ></PatternTemplate>
   );
 };
 
-export default LibraryPage;
+export default BreakpointPage;
