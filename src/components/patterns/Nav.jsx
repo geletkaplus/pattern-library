@@ -51,17 +51,13 @@ const StyledNavLinks = styled.ul`
 
 const StyledSidebar = styled.nav``;
 
-const NavLinks = ({ navList, logoSrc, projectName }) => {
+const NavLinks = ({ navList, projectName }) => {
   return (
     <StyledNavLinks className="nav-links">
       {projectName && (
         <li>
           <Link>
-            {logoSrc ? (
-              <StaticImage src={logoSrc} alt={projectName} />
-            ) : (
-              <div className="logo-placeholder">{projectName}</div>
-            )}
+            <div className="logo-placeholder">{projectName}</div>
           </Link>
         </li>
       )}
@@ -86,7 +82,7 @@ const NavLinks = ({ navList, logoSrc, projectName }) => {
   );
 };
 
-const Nav = ({ navList, logoSrc, projectName }) => {
+const Nav = ({ navList, projectName }) => {
   const [sidebar, setSidebar] = useState(false);
 
   const size = useWindowSize();
@@ -99,11 +95,11 @@ const Nav = ({ navList, logoSrc, projectName }) => {
 
   return sidebar ? (
     <StyledSidebar>
-      <NavLinks navList={navList} logoSrc={logoSrc} projectName={projectName} />
+      <NavLinks navList={navList} projectName={projectName} />
     </StyledSidebar>
   ) : (
     <StyledNav>
-      <NavLinks navList={navList} logoSrc={logoSrc} projectName={projectName} />
+      <NavLinks navList={navList} projectName={projectName} />
     </StyledNav>
   );
 };

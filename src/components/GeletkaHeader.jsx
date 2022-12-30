@@ -57,9 +57,11 @@ const GeletkaHeader = () => {
     let i = 0;
     while (i < letters.length) {
       await waitForMs(delay);
-      if (document.getElementById(eleRef).innerHTML !== sentence) {
-        document.getElementById(eleRef).append(letters[i]);
-        i++;
+      if (document !== undefined) {
+        if (document.getElementById(eleRef).innerHTML !== sentence) {
+          document.getElementById(eleRef).append(letters[i]);
+          i++;
+        }
       }
     }
     return;
