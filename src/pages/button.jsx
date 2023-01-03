@@ -10,9 +10,6 @@ const StyledButtonPage = styled.div`
 `;
 
 const ButtonPage = () => {
-  const example = message => {
-    console.log(message);
-  };
   return (
     <StyledButtonPage>
       <PatternTemplate
@@ -44,6 +41,29 @@ const ButtonPage = () => {
           secondary
           func={() => alert('You just clicked the secondary button')}
           buttonText={'Secondary Button'}
+        />
+      </PatternTemplate>
+      <PatternTemplate
+        componentName={'Clear button'}
+        frameTitle={'Clear button'}
+        height={'60rem'}
+      >
+        <Button
+          clear
+          func={() => alert('You just clicked the clear button')}
+          buttonText={'Clear Button'}
+        />
+      </PatternTemplate>
+      <PatternTemplate
+        componentName={'Secondary clear button'}
+        frameTitle={'Secondary clear button'}
+        height={'60rem'}
+      >
+        <Button
+          clear
+          secondary
+          func={() => alert('You just clicked the secondary clear button')}
+          buttonText={'Secondary clear Button'}
         />
       </PatternTemplate>
     </StyledButtonPage>

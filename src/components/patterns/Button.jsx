@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'gatsby';
 import styled from 'styled-components';
 
 const StyledButton = styled.div`
@@ -38,21 +39,50 @@ const StyledButton = styled.div`
       color: gray;
     }
   }
+
+  .clear {
+    background: none;
+  }
+
+  .clear.primary {
+    color: black;
+    border: 2px solid black;
+    :hover,
+    :focus {
+      color: gray;
+      border: 2px solid gray;
+    }
+  }
+  .clear.secondary {
+    color: gray;
+    :hover,
+    :focus {
+      color: black;
+      border: 2px solid black;
+    }
+  }
 `;
 
-const Button = ({ buttonText, secondary, link, func }) => {
+const Button = ({ buttonText, secondary, clear, link, func }) => {
+  let className = ['primary'];
+  if (secondary) className = ['secondary'];
+  if (clear) className.push('clear');
+  className = className.join(' ');
+
   return (
     <StyledButton className="button">
       {link ? (
-        <a
-          className={secondary ? 'secondary' : 'primary'}
-          href={link}
-          target="_blank"
-        >
-          {buttonText}
-        </a>
+        link[0] !== '/' ? (
+          <a className={className} href={link}>
+            {buttonText}
+          </a>
+        ) : (
+          <Link to={link} className={className}>
+            {buttonText}
+          </Link>
+        )
       ) : (
-        <button className={secondary ? 'secondary' : 'primary'} onClick={func}>
+        <button className={className} onClick={func}>
           {buttonText}
         </button>
       )}
