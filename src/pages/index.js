@@ -23,22 +23,7 @@ const StyledIndex = styled.div`
 `;
 
 const Index = () => {
-  return (
-    <StyledIndex>
-      <p>
-        Code snippets are generated using{' '}
-        <a href="https://carbon.now.sh/" alt="Carbon" target="blank">
-          Carbon
-        </a>
-        .
-      </p>
-      <p>
-        To upload a code snippet, copy the URL and add "embed" after
-        "carbon.now.sh/" and before "?bg=rgba" to create a src attribute for the
-        CodeSnippet.jsx component.
-      </p>
-    </StyledIndex>
-  );
+  return <StyledIndex />;
 };
 
 export default Index;

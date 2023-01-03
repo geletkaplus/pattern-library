@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Button from './patterns/Button';
 import styled from 'styled-components';
+import { CopyBlock } from 'react-code-blocks';
 
 const StyledPatternTemplate = styled.div`
   display: flex;
@@ -32,19 +33,28 @@ const StyledPatternTemplate = styled.div`
     width: 100%;
   }
 
-  .hidden-container {
-    display: flex;
-    width: 100%;
+  .code-container {
+    margin-top: 1rem;
+
+    .button {
+      width: 100%;
+
+      a,
+      button {
+        width: 100%;
+        background-color: black;
+        border: 2px solid black;
+
+        :hover {
+          border: 2px solid black;
+          color: white;
+        }
+      }
+    }
   }
 `;
 
-const PatternTemplate = ({
-  componentName,
-  children,
-  frameTitle,
-  src,
-  height,
-}) => {
+const PatternTemplate = ({ componentName, children, code }) => {
   const [visible, setVisible] = useState(false);
 
   const toggleContainer = () => {
@@ -55,18 +65,14 @@ const PatternTemplate = ({
     <StyledPatternTemplate>
       <h3>{componentName}</h3>
       <div className="example-container">{children}</div>
-      {src && (
-        <>
-          <button onClick={toggleContainer}>View code</button>
-          {visible && (
-            <iframe
-              title={frameTitle}
-              src={src}
-              style={{ height }}
-              sandbox="allow-scripts allow-same-origin"
-            />
-          )}
-        </>
+      {code && (
+        <div className="code-container">
+          <Button
+            func={toggleContainer}
+            buttonText={visible ? 'Hide code' : 'View code'}
+          />
+          {visible && <CopyBlock text={code} language="jsx" theme="dracula" />}
+        </div>
       )}
     </StyledPatternTemplate>
   );

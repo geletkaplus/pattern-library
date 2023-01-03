@@ -63,7 +63,7 @@ const Modal = ({ toggleText, children, closeText }) => {
   return (
     <StyledModal>
       <div className={`${show && 'openModal'}`} />
-      <Button secondary func={showModal} buttonText={toggleText} />
+      <Button func={showModal} buttonText={toggleText} />
       {show && (
         <div className="modal" ref={wrapperRef}>
           {children}

@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'gatsby';
-import { StaticImage } from 'gatsby-plugin-image';
 import { useWindowSize } from '../../lib/useWindowSize';
 import slugify from 'slugify';
 import styled from 'styled-components';
