@@ -32,7 +32,7 @@ export default function Layout({ children }) {
       <GeletkaHeader />
       <div className="info">
         <GeletkaNav />
-        <div className="children">{children}</div>
+        {children}
       </div>
     </StyledLayout>
   );
