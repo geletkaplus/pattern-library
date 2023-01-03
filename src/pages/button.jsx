@@ -4,9 +4,6 @@ import Button from '../components/patterns/Button';
 import CodeSnippet from '../components/CodeSnippet';
 
 const ButtonPage = () => {
-  const example = message => {
-    console.log(message);
-  };
   return (
     <PatternTemplate
       componentName={'Button'}
@@ -20,6 +17,17 @@ const ButtonPage = () => {
       />
       <Button
         secondary
+        func={() => console.log('Secondary button clicked')}
+        buttonText={'Secondary Button'}
+      />
+      <Button
+        clear
+        func={() => console.log('Secondary button clicked')}
+        buttonText={'Secondary Button'}
+      />
+      <Button
+        secondary
+        clear
         func={() => console.log('Secondary button clicked')}
         buttonText={'Secondary Button'}
       />
