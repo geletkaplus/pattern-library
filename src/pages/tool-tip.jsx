@@ -1,6 +1,7 @@
 import React from 'react';
 import PatternTemplate from '../components/PatternTemplate';
 import ToolTip from '../components/patterns/ToolTip';
+import Button from '../components/patterns/Button';
 
 const ToolTipPage = () => {
   return (
@@ -9,7 +10,9 @@ const ToolTipPage = () => {
       frameTitle={'Tool tip'}
       height={'60rem'}
     >
-      <ToolTip text={'heloooo'}>hello</ToolTip>
+      <ToolTip text={'You just opened the tool tip'}>
+        <Button buttonText={'Click for more info'}></Button>
+      </ToolTip>
     </PatternTemplate>
   );
 };

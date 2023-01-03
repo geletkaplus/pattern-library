@@ -1,14 +1,14 @@
 import React from 'react';
 import PatternTemplate from '../components/PatternTemplate';
 
-const LibraryPage = () => {
+const FontsPage = () => {
   return (
     <PatternTemplate
-      componentName={'Library'}
-      frameTitle={'Library'}
+      componentName={'Fonts'}
+      frameTitle={'Fonts'}
       height={'60rem'}
     ></PatternTemplate>
   );
 };
 
-export default LibraryPage;
+export default FontsPage;

@@ -1,14 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
 import GeletkaHeader from './GeletkaHeader';
-import Sidebar from './Sidebar';
+import GeletkaNav from './GeletkaNav';
 
 const StyledLayout = styled.div`
   font-family: arial;
   display: flex;
   flex-direction: column;
-  height: 100%;
-  padding: 2rem;
+  padding: 1rem;
 
   html,
   body {
@@ -16,13 +15,14 @@ const StyledLayout = styled.div`
     height: 100%;
   }
 
-  .info {
-    display: flex;
-  }
-
   #gatsby-focus-wrapper,
   #___gatsby {
     height: 100%;
+  }
+
+  .info {
+    display: flex;
+    gap: 4rem;
   }
 `;
 
@@ -31,7 +31,7 @@ export default function Layout({ children }) {
     <StyledLayout>
       <GeletkaHeader />
       <div className="info">
-        <Sidebar />
+        <GeletkaNav />
         {children}
       </div>
     </StyledLayout>

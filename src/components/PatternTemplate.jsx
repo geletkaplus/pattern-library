@@ -3,17 +3,17 @@ import Button from './patterns/Button';
 import styled from 'styled-components';
 
 const StyledPatternTemplate = styled.div`
-  padding: 2rem 1rem;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 0.5rem;
+  max-width: 50rem;
   width: 100%;
 
   h3 {
     text-transform: uppercase;
-    letter-spacing: 0.5rem;
-    font-size: 1.5rem;
-    margin-top: 0;
+    letter-spacing: 0.3rem;
+    font-size: 1rem;
+    margin: 0;
   }
 
   iframe {

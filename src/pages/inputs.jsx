@@ -9,6 +9,7 @@ import styled from 'styled-components';
 const StyledInputsPage = styled.div`
   display: flex;
   flex-direction: column;
+  gap: 3rem;
 `;
 
 const InputsPage = () => {

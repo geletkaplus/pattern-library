@@ -42,6 +42,7 @@ const StyledModal = styled.div`
     display: flex;
     justify-content: flex-end;
     flex-wrap: wrap;
+    gap: 1rem;
   }
 `;
 
@@ -62,7 +63,7 @@ const Modal = ({ toggleText, children, closeText }) => {
   return (
     <StyledModal>
       <div className={`${show && 'openModal'}`} />
-      <button onClick={showModal}>{toggleText}</button>
+      <Button secondary func={showModal} buttonText={toggleText} />
       {show && (
         <div className="modal" ref={wrapperRef}>
           {children}
@@ -71,7 +72,7 @@ const Modal = ({ toggleText, children, closeText }) => {
               func={console.log('You clicked the submit button')}
               buttonText={'Submit'}
             />
-            <Button secondary func={closeInput} buttonText={'Close'} />
+            <Button secondary func={closeInput} buttonText={closeText} />
           </div>
         </div>
       )}

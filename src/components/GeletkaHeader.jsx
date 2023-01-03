@@ -1,53 +1,81 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
 
 const StyledGeletkaHeader = styled.div`
   display: flex;
   flex-direction: column;
-  border-bottom: 1px solid black;
-  padding: 2rem;
+  padding: 3rem 0 4rem 0;
+  gap: 1rem;
 
   h1 {
     font-size: 2rem;
-    letter-spacing: 2rem;
+    letter-spacing: 1.875rem;
     text-transform: uppercase;
+    margin: 0;
 
     a {
       color: black;
+      text-decoration: none;
     }
   }
 
-  a {
-    color: red;
-    text-decoration: none;
+  #input-cursor {
+    font-size: 2.875rem;
+    font-weight: 400;
+    vertical-align: center;
+    margin-left: -1rem;
+    display: inline-block;
+    animation: blink 0.6s linear infinite alternate;
   }
 
-  p {
-    color: gray;
+  @keyframes blink {
+    0% {
+      opacity: 1;
+    }
+    45% {
+      opacity: 1;
+    }
+    55% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 0;
+    }
   }
 `;
 
 const GeletkaHeader = () => {
+  const [complete, setComplete] = useState(false);
+
+  useEffect(() => {
+    function waitForMs(ms) {
+      return new Promise(resolve => setTimeout(resolve, ms));
+    }
+    async function typeSentence(sentence, eleRef, delay = 100) {
+      const letters = sentence.split('');
+      let i = 0;
+      while (i < letters.length) {
+        await waitForMs(delay);
+        if (typeof document !== `undefined`) {
+          if (document.getElementById(eleRef).innerHTML !== sentence) {
+            document.getElementById(eleRef).append(letters[i]);
+            i++;
+          }
+        }
+      }
+      return;
+    }
+
+    typeSentence('G+ Pattern Library', 'sentence');
+  });
+
   return (
     <StyledGeletkaHeader>
       <h1>
-        <Link to="/" rel="homepage">
-          Geletka+ Pattern Library
-        </Link>
+        <Link id="sentence" to="/" />
+        <span id="input-cursor">|</span>
       </h1>
-      <p>
-        Code snippets generated using{' '}
-        <a href="https://carbon.now.sh/" alt="Carbon" target="blank">
-          Carbon
-        </a>
-        .
-      </p>
-      <p>
-        To upload a code snippet, copy the URL and add "embed" after
-        "carbon.now.sh/" and before "?bg=rgba" to create a src attribute for the
-        CodeSnippet.jsx component.
-      </p>
     </StyledGeletkaHeader>
   );
 };

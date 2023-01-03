@@ -7,6 +7,7 @@ const StyledButton = styled.div`
 
   a,
   button {
+    display: flex;
     padding: 0.5rem 1rem;
     text-decoration: none;
     font-size: 0.8rem;
@@ -15,28 +16,27 @@ const StyledButton = styled.div`
     outline: none;
     color: white;
     cursor: pointer;
-    margin: 0.5rem;
+    justify-content: center;
   }
 
   .primary {
-    border: 2px solid #96adb9;
-    background: #a0c1d3;
+    border: 2px solid red;
+    background: red;
 
-    :hover,
-    :focus {
+    :hover {
       background-color: white;
-      color: #96adb9;
+      color: red;
     }
   }
 
   .secondary {
-    border: 2px solid #9898a3;
-    background: #a6a6ac;
+    border: 2px solid gray;
+    background: gray;
 
     :hover,
     :focus {
       background-color: white;
-      color: #9898a3;
+      color: gray;
     }
   }
 
@@ -45,17 +45,20 @@ const StyledButton = styled.div`
   }
 
   .clear.primary {
-    color: #a0c1d3;
+    color: black;
+    border: 2px solid black;
     :hover,
     :focus {
-      color: #9898a3;
+      color: gray;
+      border: 2px solid gray;
     }
   }
   .clear.secondary {
-    color: #a6a6ac;
+    color: gray;
     :hover,
     :focus {
-      color: #9898a3;
+      color: black;
+      border: 2px solid black;
     }
   }
 `;
@@ -67,7 +70,7 @@ const Button = ({ buttonText, secondary, clear, link, func }) => {
   className = className.join(' ');
 
   return (
-    <StyledButton>
+    <StyledButton className="button">
       {link ? (
         link[0] !== '/' ? (
           <a className={className} href={link}>

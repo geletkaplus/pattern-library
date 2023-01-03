@@ -6,44 +6,71 @@ import slugify from 'slugify';
 import styled from 'styled-components';
 
 const StyledNav = styled.nav`
-  a {
-    font-weight: 400;
-    font-size: 1rem;
-    text-decoration: none;
-    padding: 0.5rem;
-  }
+  padding: 1.875rem;
+  width: 100%;
+  border: 2px solid gray;
+  border-radius: 5px;
 `;
 
 const StyledNavLinks = styled.ul`
   display: flex;
   list-style-type: none;
+  gap: 3rem;
+  margin: 0;
+  padding: 0;
+  justify-content: space-between;
+  width: 100%;
 
   li {
-    margin: 1.875rem 1rem;
+    display: flex;
+    align-items: center;
+  }
+
+  a {
+    font-weight: 400;
+    font-size: 1rem;
+    text-decoration: none;
+    color: red;
+
+    :hover {
+      text-decoration: underline;
+    }
+  }
+
+  .logo-placeholder {
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 1.5rem;
+  }
+
+  .link-container {
+    display: flex;
+    gap: 1rem;
   }
 `;
 
 const StyledSidebar = styled.nav``;
 
-const NavLinks = ({ navList }) => {
+const NavLinks = ({ navList, projectName }) => {
   return (
-    <StyledNavLinks>
-      <li>
-        <Link>
-          <StaticImage
-            src="../../images/image-3.jpg"
-            alt="<NAME OF PROJECT GOES HERE>"
-          />
-        </Link>
-      </li>
+    <StyledNavLinks className="nav-links">
+      {projectName && (
+        <li>
+          <Link>
+            <div className="logo-placeholder">{projectName}</div>
+          </Link>
+        </li>
+      )}
       {navList ? (
-        navList.map(link => (
-          <li>
-            <Link to={`/${slugify(link, { lower: true, strict: true })}`}>
-              {link}
-            </Link>
-          </li>
-        ))
+        <div className="link-container">
+          {navList.map(link => (
+            <li>
+              <Link to={`/${slugify(link, { lower: true, strict: true })}`}>
+                {link}
+              </Link>
+            </li>
+          ))}
+        </div>
       ) : (
         <>
           <li>
@@ -55,26 +82,26 @@ const NavLinks = ({ navList }) => {
   );
 };
 
-const Nav = ({ logo, navList }) => {
-  const [sideBar, setSideBar] = useState(false);
+const Nav = ({ navList, projectName }) => {
+  const [sidebar, setSidebar] = useState(false);
 
   const size = useWindowSize();
 
   useEffect(() => {
-    if (size.width > 900) {
-      setSideBar(false);
+    if (size.width < 900) {
+      setSidebar(true);
     }
   }, [size]);
 
-  return sideBar ? (
+  return sidebar ? (
     <StyledSidebar>
-      <NavLinks logo={logo} navList={navList} />
+      <NavLinks navList={navList} projectName={projectName} />
     </StyledSidebar>
   ) : (
     <StyledNav>
-      <NavLinks navList={navList} />
+      <NavLinks navList={navList} projectName={projectName} />
     </StyledNav>
   );
 };
 
-export default Nav;
+export { Nav, NavLinks };
