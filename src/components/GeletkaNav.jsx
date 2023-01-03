@@ -7,7 +7,6 @@ const StyledGeletkaNav = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  /* padding: 1rem; */
   gap: 2.5rem;
   text-transform: uppercase;
 
@@ -52,7 +51,7 @@ const GeletkaNav = () => {
     'Tool tip',
   ];
 
-  const guidelines = ['Library', 'Breakpoints', 'Color'];
+  const guidelines = ['Library', 'Breakpoints', 'Color', 'Fonts'];
   return (
     <StyledGeletkaNav>
       <div>
