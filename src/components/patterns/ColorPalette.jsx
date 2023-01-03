@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
-const ColorPallette = createGlobalStyle`
+const ColorPalette = createGlobalStyle`
   :root {
     --black: #000000;
     --white: #FFFFFF;
@@ -47,4 +47,4 @@ const ColorPallette = createGlobalStyle`
 
 `;
 
-export default ColorPallette;
+export default ColorPalette;
