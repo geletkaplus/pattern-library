@@ -21,6 +21,8 @@ const StyledToolTip = styled.div`
     float: right;
     justify-content: space-evenly;
     align-items: center; */
+    display: flex;
+    flex-direction: column;
 
     &:hover {
       cursor: pointer;
@@ -28,29 +30,26 @@ const StyledToolTip = styled.div`
   }
 
   .triangle {
-    /* width: 0;
+    width: 0;
     height: 0;
     border-left: 20px solid transparent;
     border-right: 20px solid transparent;
-    border-bottom: 20px solid white;
+    border-bottom: 20px solid gray;
     display: inline;
-    position: absolute;
-    top: 35px;
-    right: -8px; */
+    position: relative;
   }
 
   .text-container {
-    /* background-color: white;
+    background-color: gray;
     padding: 25px;
     border-radius: 8px;
-    position: absolute;
-    top: 30px;
+    position: relative;
     width: 100%;
     min-width: 200px;
     max-width: 500px;
-    margin-top: 20px;
-    right: -30px; */
-    color: black;
+    margin-top: 15px;
+    left: -25px;
+    color: white;
   }
 `;
 
@@ -78,10 +77,10 @@ const ToolTip = ({ text, children }) => {
         {children}
       </div>
       {isOpen && (
-        <>
+        <div className="tool-tip">
           <div className="triangle" />
           <div className="text-container">{text}</div>
-        </>
+        </div>
       )}
     </StyledToolTip>
   );
