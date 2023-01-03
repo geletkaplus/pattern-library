@@ -4,23 +4,8 @@ import useClickOutside from '../../lib/useClickOutside';
 
 const StyledToolTip = styled.div`
   display: inline-flex;
-  /* float: right;
-  flex-direction: column;
-  align-items: flex-end;
-  position: relative;
-  z-index: 1;
-  margin-left: 1rem;
-  justify-content: center;
-  align-self: flex-end; */
 
   .tooltip-container {
-    /* width: 25px;
-    border-radius: 50%;
-    height: 25px;
-    display: inline-flex;
-    float: right;
-    justify-content: space-evenly;
-    align-items: center; */
     display: flex;
     flex-direction: column;
 
@@ -29,6 +14,11 @@ const StyledToolTip = styled.div`
     }
   }
 
+  .tool-tip {
+    position: absolute;
+    top: 15rem;
+    left: 18.875rem;
+  }
   .triangle {
     width: 0;
     height: 0;

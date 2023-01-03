@@ -33,29 +33,28 @@ const StyledPatternTemplate = styled.div`
     width: 100%;
   }
 
-  .hidden-container {
-    display: flex;
-    width: 100%;
-  }
+  .code-container {
+    margin-top: 1rem;
 
-  .button {
-    width: 100%;
-
-    a,
-    button {
+    .button {
       width: 100%;
+
+      a,
+      button {
+        width: 100%;
+        background-color: black;
+        border: 2px solid black;
+
+        :hover {
+          border: 2px solid black;
+          color: white;
+        }
+      }
     }
   }
 `;
 
-const PatternTemplate = ({
-  componentName,
-  children,
-  frameTitle,
-  src,
-  height,
-  code,
-}) => {
+const PatternTemplate = ({ componentName, children, code }) => {
   const [visible, setVisible] = useState(false);
 
   const toggleContainer = () => {
@@ -67,10 +66,13 @@ const PatternTemplate = ({
       <h3>{componentName}</h3>
       <div className="example-container">{children}</div>
       {code && (
-        <>
-          <Button func={toggleContainer} buttonText="View code" />
+        <div className="code-container">
+          <Button
+            func={toggleContainer}
+            buttonText={visible ? 'Hide code' : 'View code'}
+          />
           {visible && <CopyBlock text={code} language="jsx" theme="dracula" />}
-        </>
+        </div>
       )}
     </StyledPatternTemplate>
   );
