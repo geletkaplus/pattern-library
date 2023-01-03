@@ -26,7 +26,7 @@ const ButtonPage = () => {
       >
         <Button
           link="https://www.ctvnews.ca/polopoly_fs/1.4692721.1574189694!/httpImage/image.jpg_gen/derivatives/landscape_620/image.jpg"
-          buttonText={'Link button'}
+          buttonText={'External link button'}
         />
       </PatternTemplate>
       <PatternTemplate
@@ -51,14 +51,14 @@ const ButtonPage = () => {
         />
       </PatternTemplate>
       <PatternTemplate
-        componentName={'Clear button'}
-        frameTitle={'Clear button'}
+        componentName={'Primary clear button'}
+        frameTitle={'Primary clear button'}
         height={'60rem'}
       >
         <Button
           clear
-          func={() => alert('You just clicked the clear button')}
-          buttonText={'Clear Button'}
+          func={() => alert('You just clicked the primary clear button')}
+          buttonText={'Primary clear Button'}
         />
       </PatternTemplate>
       <PatternTemplate
