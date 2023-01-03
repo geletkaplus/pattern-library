@@ -4,8 +4,8 @@ import PatternTemplate from '../components/PatternTemplate';
 const BreakpointPage = () => {
   return (
     <PatternTemplate
-      componentName={'Breakpoint'}
-      frameTitle={'Breakpoint'}
+      componentName={'Breakpoints'}
+      frameTitle={'Breakpoints'}
       height={'60rem'}
     ></PatternTemplate>
   );

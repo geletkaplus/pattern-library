@@ -13,6 +13,13 @@ const ButtonPage = () => {
   return (
     <StyledButtonPage>
       <PatternTemplate
+        componentName={'Internal link button'}
+        frameTitle={'Internal link button'}
+        height={'60rem'}
+      >
+        <Button link="/" buttonText={'Internal link Button'} />
+      </PatternTemplate>
+      <PatternTemplate
         componentName={'External link button'}
         frameTitle={'External link button'}
         height={'60rem'}
