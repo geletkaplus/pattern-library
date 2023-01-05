@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PatternTemplate from '../components/PatternTemplate';
-import useClickOutside from '../lib/useClickOutside';
-import useWindowSize from '../lib/useWindowSize';
+import { Nav } from '../components/patterns/Nav';
 import Modal from '../components/patterns/Modal';
 import styled from 'styled-components';
 
@@ -12,7 +11,7 @@ const StyledLibraryPage = styled.div`
 `;
 
 const LibraryPage = () => {
-  const [toggle, setToggle] = useState(false);
+  const navList = ['Home', 'Blog', 'About Us'];
 
   return (
     <StyledLibraryPage>
@@ -40,7 +39,7 @@ const useClickOutside = (ref, closeInput) => {
 export default useClickOutside;
 `}
       >
-        <Modal toggleText="Click to open a modal" closeText="Close">
+        <Modal toggleText="Click to open a modal">
           Now try clicking outside of the modal to close it.
         </Modal>
       </PatternTemplate>
@@ -74,7 +73,9 @@ export function useWindowSize() {
   return windowSize;
 }
 `}
-      ></PatternTemplate>
+      >
+        <Nav navList={navList} projectName="Example logo" />
+      </PatternTemplate>
     </StyledLibraryPage>
   );
 };
