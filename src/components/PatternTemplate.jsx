@@ -7,7 +7,7 @@ const StyledPatternTemplate = styled.div`
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  max-width: 50rem;
+  max-width: 52rem;
   width: 100%;
 
   h3 {

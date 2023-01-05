@@ -23,6 +23,7 @@ const StyledLayout = styled.div`
   .info {
     display: flex;
     gap: 4rem;
+    width: 100%;
   }
 `;
 
