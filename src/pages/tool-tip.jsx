@@ -89,7 +89,7 @@ const ToolTipPage = () => {
     `}
     >
       <ToolTip text={'You just opened the tool tip'}>
-        <Button buttonText={'Click for more info'}></Button>
+        <Button text={'Click for more info'}></Button>
       </ToolTip>
     </PatternTemplate>
   );

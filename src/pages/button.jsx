@@ -13,32 +13,32 @@ const ButtonPage = () => {
   return (
     <StyledButtonPage>
       <PatternTemplate componentName={'Internal link button'}>
-        <Button link="/" buttonText={'Internal link Button'} />
+        <Button link="/" text={'Internal link Button'} />
       </PatternTemplate>
       <PatternTemplate componentName={'External link button'}>
         <Button
           link="https://www.ctvnews.ca/polopoly_fs/1.4692721.1574189694!/httpImage/image.jpg_gen/derivatives/landscape_620/image.jpg"
-          buttonText={'External link button'}
+          text={'External link button'}
         />
       </PatternTemplate>
       <PatternTemplate componentName={'Primary button'}>
         <Button
           func={() => alert('You just clicked the primary button')}
-          buttonText={'Primary Button'}
+          text={'Primary Button'}
         />
       </PatternTemplate>
       <PatternTemplate componentName={'Secondary button'}>
         <Button
           secondary
           func={() => alert('You just clicked the secondary button')}
-          buttonText={'Secondary Button'}
+          text={'Secondary Button'}
         />
       </PatternTemplate>
       <PatternTemplate componentName={'Primary clear button'}>
         <Button
           clear
           func={() => alert('You just clicked the primary clear button')}
-          buttonText={'Primary clear Button'}
+          text={'Primary clear Button'}
         />
       </PatternTemplate>
       <PatternTemplate
@@ -108,7 +108,7 @@ const StyledButton = styled.div\`
   }
 \`;
 
-const Button = ({ buttonText, secondary, clear, link, func }) => {
+const Button = ({ text, secondary, clear, link, func }) => {
   let className = ['primary'];
   if (secondary) className = ['secondary'];
   if (clear) className.push('clear');
@@ -119,16 +119,16 @@ const Button = ({ buttonText, secondary, clear, link, func }) => {
       {link ? (
         link[0] !== '/' ? (
           <a className={className} href={link}>
-            {buttonText}
+            {text}
           </a>
         ) : (
           <Link to={link} className={className}>
-            {buttonText}
+            {text}
           </Link>
         )
       ) : (
         <button className={className} onClick={func}>
-          {buttonText}
+          {text}
         </button>
       )}
     </StyledButton>
@@ -142,7 +142,7 @@ export default Button;
           clear
           secondary
           func={() => alert('You just clicked the secondary clear button')}
-          buttonText={'Secondary clear Button'}
+          text={'Secondary clear Button'}
         />
       </PatternTemplate>
     </StyledButtonPage>

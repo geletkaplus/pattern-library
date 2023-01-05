@@ -44,6 +44,7 @@ const ModalPage = () => {
         left: 50%;
         transform: translate(-50%, -50%);
         position: fixed;
+        cursor: pointer;
       }
     
       .actions {
@@ -54,7 +55,7 @@ const ModalPage = () => {
       }
     \`;
     
-    const Modal = ({ toggleText, children, closeText }) => {
+    const Modal = ({ toggleText, children }) => {
       const [show, setShow] = useState(false);
       const wrapperRef = useRef(null);
     
@@ -71,16 +72,16 @@ const ModalPage = () => {
       return (
         <StyledModal>
           <div className={\`\${show && 'openModal'}\`} />
-          <Button secondary func={showModal} buttonText={toggleText} />
+          <Button secondary func={showModal} text={toggleText} />
           {show && (
             <div className="modal" ref={wrapperRef}>
               {children}
               <div className="actions">
                 <Button
                   func={console.log('You clicked the submit button')}
-                  buttonText={'Submit'}
+                  text={'Submit'}
                 />
-                <Button secondary func={closeInput} buttonText={closeText} />
+                <Button secondary func={closeInput} text='Close modal'/>
               </div>
             </div>
           )}
@@ -90,9 +91,7 @@ const ModalPage = () => {
     export default Modal;
     `}
     >
-      <Modal toggleText={'View modal'} closeText={'Close modal'}>
-        This is a modal
-      </Modal>
+      <Modal toggleText={'View modal'}>This is a modal</Modal>
     </PatternTemplate>
   );
 };

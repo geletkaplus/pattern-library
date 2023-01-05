@@ -7,7 +7,7 @@ const StyledPatternTemplate = styled.div`
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  max-width: 50rem;
+  max-width: 52rem;
   width: 100%;
 
   h3 {
@@ -69,7 +69,7 @@ const PatternTemplate = ({ componentName, children, code }) => {
         <div className="code-container">
           <Button
             func={toggleContainer}
-            buttonText={visible ? 'Hide code' : 'View code'}
+            text={visible ? 'Hide code' : 'View code'}
           />
           {visible && <CopyBlock text={code} language="jsx" theme="dracula" />}
         </div>

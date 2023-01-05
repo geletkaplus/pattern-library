@@ -164,16 +164,16 @@ const CarouselPage = () => {
     >
       <Carousel>
         <CarouselItem>
-          <img src={image1} />
+          <img src={image1} alt="image 1" />
         </CarouselItem>
         <CarouselItem>
-          <img src={image2} />
+          <img src={image2} alt="image 2" />
         </CarouselItem>
         <CarouselItem>
-          <img src={image3} />
+          <img src={image3} alt="image 3" />
         </CarouselItem>
         <CarouselItem>
-          <img src={image4} />
+          <img src={image4} alt="image 4" />
         </CarouselItem>
       </Carousel>
     </PatternTemplate>

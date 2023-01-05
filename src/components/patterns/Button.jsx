@@ -63,7 +63,7 @@ const StyledButton = styled.div`
   }
 `;
 
-const Button = ({ buttonText, secondary, clear, link, func }) => {
+const Button = ({ text, secondary, clear, link, func }) => {
   let className = ['primary'];
   if (secondary) className = ['secondary'];
   if (clear) className.push('clear');
@@ -74,16 +74,16 @@ const Button = ({ buttonText, secondary, clear, link, func }) => {
       {link ? (
         link[0] !== '/' ? (
           <a className={className} href={link}>
-            {buttonText}
+            {text}
           </a>
         ) : (
           <Link to={link} className={className}>
-            {buttonText}
+            {text}
           </Link>
         )
       ) : (
         <button className={className} onClick={func}>
-          {buttonText}
+          {text}
         </button>
       )}
     </StyledButton>
