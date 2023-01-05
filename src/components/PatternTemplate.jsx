@@ -69,7 +69,7 @@ const PatternTemplate = ({ componentName, children, code }) => {
         <div className="code-container">
           <Button
             func={toggleContainer}
-            buttonText={visible ? 'Hide code' : 'View code'}
+            text={visible ? 'Hide code' : 'View code'}
           />
           {visible && <CopyBlock text={code} language="jsx" theme="dracula" />}
         </div>

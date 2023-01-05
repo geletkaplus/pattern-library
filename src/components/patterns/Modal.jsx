@@ -36,6 +36,7 @@ const StyledModal = styled.div`
     left: 50%;
     transform: translate(-50%, -50%);
     position: fixed;
+    cursor: pointer;
   }
 
   .actions {
@@ -46,7 +47,7 @@ const StyledModal = styled.div`
   }
 `;
 
-const Modal = ({ toggleText, children, closeText }) => {
+const Modal = ({ toggleText, children }) => {
   const [show, setShow] = useState(false);
   const wrapperRef = useRef(null);
 
@@ -63,16 +64,16 @@ const Modal = ({ toggleText, children, closeText }) => {
   return (
     <StyledModal>
       <div className={`${show && 'openModal'}`} />
-      <Button func={showModal} buttonText={toggleText} />
+      <Button func={showModal} text={toggleText} />
       {show && (
         <div className="modal" ref={wrapperRef}>
           {children}
           <div className="actions">
             <Button
               func={console.log('You clicked the submit button')}
-              buttonText={'Submit'}
+              text={'Submit'}
             />
-            <Button secondary func={closeInput} buttonText={closeText} />
+            <Button secondary func={closeInput} text="Close" />
           </div>
         </div>
       )}
