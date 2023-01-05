@@ -6,9 +6,34 @@ import styled from 'styled-components';
 
 const StyledNav = styled.nav`
   padding: 1.875rem;
-  width: 100%;
   border: 2px solid gray;
   border-radius: 5px;
+
+  ul.nav-links {
+    justify-content: space-between;
+    width: 100%;
+  }
+`;
+
+const StyledSidebar = styled.nav`
+  padding: 1.875rem;
+  width: fit-content;
+  border: 2px solid gray;
+  border-radius: 5px;
+
+  ul.nav-links {
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+
+    .link-container {
+      flex-direction: column;
+    }
+
+    .logo-placeholder {
+      text-align: center;
+    }
+  }
 `;
 
 const StyledNavLinks = styled.ul`
@@ -17,8 +42,6 @@ const StyledNavLinks = styled.ul`
   gap: 3rem;
   margin: 0;
   padding: 0;
-  justify-content: space-between;
-  width: 100%;
 
   li {
     display: flex;
@@ -47,8 +70,6 @@ const StyledNavLinks = styled.ul`
     gap: 1rem;
   }
 `;
-
-const StyledSidebar = styled.nav``;
 
 const NavLinks = ({ navList, projectName }) => {
   return (
@@ -89,6 +110,8 @@ const Nav = ({ navList, projectName }) => {
   useEffect(() => {
     if (size.width < 900) {
       setSidebar(true);
+    } else {
+      setSidebar(false);
     }
   }, [size]);
 

@@ -25,6 +25,8 @@ const useClickOutside = (ref, closeInput) => {
     function handleClickOutside(e) {
       if (ref.current && !ref.current.contains(e.target)) {
         closeInput();
+        // stopPropagation is optional -- remove if breaking
+        e.stopPropagation();
       }
     }
     document.addEventListener('mousedown', handleClickOutside);
