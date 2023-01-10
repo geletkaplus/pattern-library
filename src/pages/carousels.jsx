@@ -23,6 +23,12 @@ const CarouselsPage = () => {
     <StyledCarouselsPage>
       <PatternTemplate
         componentName={'Image Carousel'}
+        description={`Carousel that takes the ImageCarouselItem component as a child to display swipeable images.
+By default, the images automatically swipe every few seconds and are paused when the mouse hovers over them.
+
+PROPS (ImageCarouselItem): { children }
+PROPS (ImageCarousel): { children }
+        `}
         code={`
         import React, { useEffect, useState } from 'react';
         import { useSwipeable } from 'react-swipeable';
@@ -194,6 +200,11 @@ const CarouselsPage = () => {
 
       <PatternTemplate
         componentName="Text Carousel"
+        description={`Carousel that takes the TextCarouselItem component as a child to display swipeable text.
+
+PROPS (TextCarouselItem): { quote, citation }
+PROPS (TextCarousel): { children }
+        `}
         code={`
         import React, { useEffect, useState } from 'react';
         import { useSwipeable } from 'react-swipeable';
@@ -286,8 +297,8 @@ const CarouselsPage = () => {
           return (
             <StyledCarouselItem>
               <blockquote className="inner-wrapper">
-                <p className="heading-m-light">{quote}</p>
-                <cite className="body-m-regular">{citation}</cite>
+                <p>{quote}</p>
+                <cite>{citation}</cite>
               </blockquote>
             </StyledCarouselItem>
           );

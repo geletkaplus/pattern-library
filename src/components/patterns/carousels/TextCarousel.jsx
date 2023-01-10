@@ -89,8 +89,8 @@ export const TextCarouselItem = ({ quote, citation }) => {
   return (
     <StyledCarouselItem>
       <blockquote className="inner-wrapper">
-        <p className="heading-m-light">{quote}</p>
-        <cite className="body-m-regular">{citation}</cite>
+        <p>{quote}</p>
+        <cite>{citation}</cite>
       </blockquote>
     </StyledCarouselItem>
   );

@@ -16,7 +16,7 @@ const StyledToolTip = styled.div`
 
   .tool-tip {
     position: absolute;
-    top: 15rem;
+    top: 20.875rem;
     left: 18.875rem;
   }
   .triangle {
