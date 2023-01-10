@@ -51,7 +51,13 @@ const GeletkaNav = () => {
     'Tool tip',
   ];
 
-  const guidelines = ['Library', 'Breakpoints', 'Color', 'Fonts'];
+  const guidelines = [
+    'Library',
+    'Breakpoints',
+    'Color',
+    // 'Fonts'
+  ];
+
   return (
     <StyledGeletkaNav>
       <div>
