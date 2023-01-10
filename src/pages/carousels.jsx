@@ -2,10 +2,10 @@ import React from 'react';
 import PatternTemplate from '../components/PatternTemplate';
 import TextCarousel, {
   TextCarouselItem,
-} from '../components/patterns/TextCarousel';
+} from '../components/patterns/carousels/TextCarousel';
 import ImageCarousel, {
   ImageCarouselItem,
-} from '../components/patterns/ImageCarousel';
+} from '../components/patterns/carousels/ImageCarousel';
 import image1 from '../images/image-1.jpg';
 import image2 from '../images/image-2.jpg';
 import image3 from '../images/image-3.jpg';

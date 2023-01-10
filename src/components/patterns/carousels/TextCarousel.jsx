@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useSwipeable } from 'react-swipeable';
-import HeaderWithLine from './HeaderWithLine';
-import left from '../../images/left-white-caret.svg';
-import right from '../../images/right-white-caret.svg';
+import HeaderWithLine from '../HeaderWithLine';
+import left from '../../../images/left-white-caret.svg';
+import right from '../../../images/right-white-caret.svg';
 import styled from 'styled-components';
 
 const StyledTextCarousel = styled.div`
