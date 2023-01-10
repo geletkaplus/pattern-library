@@ -62,7 +62,7 @@ const PatternTemplate = ({ componentName, children, code }) => {
   };
 
   return (
-    <StyledPatternTemplate>
+    <StyledPatternTemplate className="pattern-template">
       <h3>{componentName}</h3>
       <div className="example-container">{children}</div>
       {code && (

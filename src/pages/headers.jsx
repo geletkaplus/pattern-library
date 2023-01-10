@@ -1,27 +1,36 @@
 import React from 'react';
+import PatternTemplate from '../components/PatternTemplate';
+import HeaderWithLine from '../components/patterns/headers/HeaderWithLine';
+
+const HeadersPage = () => {
+  return (
+    <PatternTemplate
+      componentName={'Header with line'}
+      code={`
+import React from 'react';
 import styled from 'styled-components';
 
-const StyledHeaderWithLine = styled.div`
+const StyledHeaderWithLine = styled.div\`
   h2,
   h3,
   h4 {
     width: 100%;
     text-align: center;
-    border-bottom: 1px solid white;
+    border-bottom: 1px solid black;
     margin: 2rem 0;
     line-height: 0.1;
     text-transform: uppercase;
-    color: white;
+    color: black;
     font-size: 2rem;
   }
 
   h2 > span,
   h3 > span,
   h4 > span {
-    background: gray;
+    background: white;
     padding: 0 2rem;
   }
-`;
+\`;
 
 const HeaderWithLine = ({ text, h2, h3, h4 }) => {
   return (
@@ -49,3 +58,12 @@ const HeaderWithLine = ({ text, h2, h3, h4 }) => {
 };
 
 export default HeaderWithLine;
+
+    `}
+    >
+      <HeaderWithLine h3 text="Header" />
+    </PatternTemplate>
+  );
+};
+
+export default HeadersPage;

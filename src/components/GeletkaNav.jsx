@@ -40,7 +40,7 @@ const GeletkaNav = () => {
   const components = [
     'Inputs',
     'Accordion',
-    'Button',
+    'Buttons',
     // 'Call to action',
     // 'Card',
     'Carousels',
@@ -49,6 +49,7 @@ const GeletkaNav = () => {
     'Modal',
     'Nav',
     'Tool tip',
+    'Headers',
   ];
 
   const guidelines = [
