@@ -23,6 +23,9 @@ const AccordionPage = () => {
   return (
     <PatternTemplate
       componentName={'Button'}
+      description={`Accordion that maps through an array (accordionList) of objects (ENTRIES: title, content) and returns an expandable accordion item.
+
+PROPS: { accordionList }`}
       code={`
       import React, { useState } from 'react';
 import rightArrow from '../../images/right-arrow.svg';

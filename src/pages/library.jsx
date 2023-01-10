@@ -25,7 +25,7 @@ To close the element, create a 'closeInput' function sets state to the desired v
 
 To test, open a modal by clicking below.
 
-<-- PROPS: ref, closeInput -->`}
+PROPS: { ref, closeInput }`}
         code={`import { useEffect } from 'react';
 
 const useClickOutside = (ref, closeInput) => {
