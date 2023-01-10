@@ -17,6 +17,12 @@ const LibraryPage = () => {
     <StyledLibraryPage>
       <PatternTemplate
         componentName={'Use click outside'}
+        description={`Clicking outside a referential element will close it. This hook is useful for dropdowns, modals, etc.
+
+To use it you must import useRef and create a variable named 'wrapperRef' with a value of 'useRef(null)'. 
+You then attach 'ref={wrapperRef} to the element you'd like the user to click outside of.
+
+To test, open a modal by clicking below.`}
         code={`import { useEffect } from 'react';
 
 const useClickOutside = (ref, closeInput) => {
@@ -45,6 +51,13 @@ export default useClickOutside;
       </PatternTemplate>
       <PatternTemplate
         componentName={'Use window size'}
+        description={`Returns the size of the window. This hook can be used for rendering elements at varying screen widths. 
+        
+To use it you should create a variable that calls useWindowSize. The screen width can then be accessed 
+using 'variableName.width'.
+
+To test, try resizing your browser and observe the change in the navigation bar.
+        `}
         code={`import { useState, useEffect } from 'react';
 
 export function useWindowSize() {
