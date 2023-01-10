@@ -7,6 +7,9 @@ const ToolTipPage = () => {
   return (
     <PatternTemplate
       componentName={'Tool tip'}
+      description={`Tooltip that uses the useClickOutside hook to close upon clicking outside.
+      
+PROPS: { text, children }`}
       code={`import React, { useState, useEffect, useRef } from 'react';
     import styled from 'styled-components';
     import useClickOutside from '../../lib/useClickOutside';

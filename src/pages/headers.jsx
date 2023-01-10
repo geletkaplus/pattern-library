@@ -6,6 +6,9 @@ const HeadersPage = () => {
   return (
     <PatternTemplate
       componentName={'Header with line'}
+      description={`Styled header that requires the markup (h2, h3, or h4) to be passed in order to be rendered. Allows the styling to remain without sacrificing semantic HTML.
+      
+PROPS: { text, h2, h3, h4 }`}
       code={`
 import React from 'react';
 import styled from 'styled-components';
