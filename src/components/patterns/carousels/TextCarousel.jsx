@@ -39,6 +39,17 @@ const StyledTextCarousel = styled.div`
   button.left {
     left: 5%;
   }
+
+  .header-with-line {
+    h4 {
+      border-bottom: 1px solid white;
+      color: white;
+    }
+
+    span {
+      background-color: gray;
+    }
+  }
 `;
 
 const StyledCarouselItem = styled.div`

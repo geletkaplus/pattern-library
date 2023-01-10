@@ -15,7 +15,7 @@ import styled from 'styled-components';
 const StyledCarouselsPage = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: 4rem;
 `;
 
 const CarouselsPage = () => {
@@ -235,6 +235,17 @@ const CarouselsPage = () => {
         
           button.left {
             left: 5%;
+          }
+
+          .header-with-line {
+            h4 {
+              border-bottom: 1px solid white;
+              color: white;
+            }
+        
+            span {
+              background-color: gray;
+            }
           }
         \`;
         

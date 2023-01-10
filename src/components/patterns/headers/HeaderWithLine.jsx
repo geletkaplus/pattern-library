@@ -25,7 +25,7 @@ const StyledHeaderWithLine = styled.div`
 
 const HeaderWithLine = ({ text, h2, h3, h4 }) => {
   return (
-    <StyledHeaderWithLine>
+    <StyledHeaderWithLine className="header-with-line">
       {/* MUST DECLARE TYPE OF HEADING TO USE */}
       {h2 && (
         <h2>

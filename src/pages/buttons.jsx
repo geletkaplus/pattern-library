@@ -7,7 +7,7 @@ import styled from 'styled-components';
 const StyledButtonPage = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: 4rem;
 
   .pill-container {
     display: flex;
