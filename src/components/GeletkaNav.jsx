@@ -43,7 +43,7 @@ const GeletkaNav = () => {
     'Button',
     // 'Call to action',
     // 'Card',
-    'Carousel',
+    'Carousels',
     // 'Photos',
     // 'Videos',
     'Modal',

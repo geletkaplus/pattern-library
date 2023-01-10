@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useSwipeable } from 'react-swipeable';
 import styled from 'styled-components';
 
-const StyledCarousel = styled.div`
+const StyledImageCarousel = styled.div`
   .carousel {
     overflow: hidden;
   }
@@ -58,11 +58,11 @@ const StyledCarousel = styled.div`
   }
 `;
 
-export const CarouselItem = ({ children }) => {
+export const ImageCarouselItem = ({ children }) => {
   return <div className="carousel-item">{children}</div>;
 };
 
-const Carousel = ({ children }) => {
+const ImageCarousel = ({ children }) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [paused, setPaused] = useState(false);
 
@@ -96,7 +96,7 @@ const Carousel = ({ children }) => {
   });
 
   return (
-    <StyledCarousel>
+    <StyledImageCarousel>
       <div
         {...handlers}
         className="carousel"
@@ -142,8 +142,8 @@ const Carousel = ({ children }) => {
           </button>
         </div>
       </div>
-    </StyledCarousel>
+    </StyledImageCarousel>
   );
 };
 
-export default Carousel;
+export default ImageCarousel;

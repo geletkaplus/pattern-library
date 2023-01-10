@@ -1,15 +1,17 @@
 import React from 'react';
 import PatternTemplate from '../components/PatternTemplate';
-import Carousel, { CarouselItem } from '../components/patterns/Carousel';
+import ImageCarousel, {
+  ImageCarouselItem,
+} from '../components/patterns/ImageCarousel';
 import image1 from '../images/image-1.jpg';
 import image2 from '../images/image-2.jpg';
 import image3 from '../images/image-3.jpg';
 import image4 from '../images/image-4.jpg';
 
-const CarouselPage = () => {
+const CarouselsPage = () => {
   return (
     <PatternTemplate
-      componentName={'Carousel'}
+      componentName={'Image Carousel'}
       code={`import React, { useEffect, useState } from 'react';
       import { useSwipeable } from 'react-swipeable';
       import styled from 'styled-components';
@@ -162,22 +164,22 @@ const CarouselPage = () => {
       
     `}
     >
-      <Carousel>
-        <CarouselItem>
+      <ImageCarousel>
+        <ImageCarouselItem>
           <img src={image1} alt="image 1" />
-        </CarouselItem>
-        <CarouselItem>
+        </ImageCarouselItem>
+        <ImageCarouselItem>
           <img src={image2} alt="image 2" />
-        </CarouselItem>
-        <CarouselItem>
+        </ImageCarouselItem>
+        <ImageCarouselItem>
           <img src={image3} alt="image 3" />
-        </CarouselItem>
-        <CarouselItem>
+        </ImageCarouselItem>
+        <ImageCarouselItem>
           <img src={image4} alt="image 4" />
-        </CarouselItem>
-      </Carousel>
+        </ImageCarouselItem>
+      </ImageCarousel>
     </PatternTemplate>
   );
 };
 
-export default CarouselPage;
+export default CarouselsPage;
