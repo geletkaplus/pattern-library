@@ -1,42 +1,43 @@
 import React, { useState } from 'react';
-import downArrow from '../../images/down-arrow.svg';
 import rightArrow from '../../images/right-arrow.svg';
 import styled from 'styled-components';
 
 const StyledAccordion = styled.dl`
-  max-width: 72.375rem;
   display: flex;
   flex-direction: column;
-  gap: 2.5rem;
+  gap: 1.5rem;
 
   dt {
     display: flex;
     justify-content: space-between;
     cursor: pointer;
-    color: red;
-
-    img {
-      width: 1rem;
-      height: 1rem;
-    }
   }
 
-  dd {
-    border: 1px solid var(--gray);
-    border-top: none;
-    border-bottom: none;
-    font-weight: 200;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    padding-left: 1rem;
-    margin: 0;
+  dt[aria-expanded='true'] img {
+    transform: rotateZ(90deg);
   }
 
   .list-group {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 1.5rem;
+    border-top: 1px solid black;
+    padding: 1.5rem 0 3.5rem 0;
+  }
+
+  img {
+    transition: all 0.35s ease;
+  }
+
+  dd {
+    overflow: hidden;
+    max-height: 50rem;
+    transition: max-height 1.5s ease-in-out;
+  }
+
+  dd[aria-expanded='true'] {
+    max-height: 0px;
+    transition: max-height 1s cubic-bezier(0, 1, 0, 1);
   }
 `;
 
@@ -77,14 +78,10 @@ const Accordion = ({ accordionList }) => {
               tabIndex={'0'}
               role="button"
             >
-              {acc.title}{' '}
-              {open[idx] ? (
-                <img src={downArrow} alt="collapse accordion" />
-              ) : (
-                <img src={rightArrow} alt="open accordion" />
-              )}
+              {acc.title}
+              <img src={rightArrow} alt="collapse accordion" />
             </dt>
-            {open[idx] && <dd>{acc.content}</dd>}
+            <dd aria-expanded={!open[idx]}>{acc.content}</dd>
           </div>
         </React.Fragment>
       ))}
