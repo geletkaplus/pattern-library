@@ -46,34 +46,33 @@ const StyledGeletkaHeader = styled.div`
 `;
 
 const GeletkaHeader = () => {
-  const [complete, setComplete] = useState(false);
+  // useEffect(() => {
+  //   function waitForMs(ms) {
+  //     return new Promise(resolve => setTimeout(resolve, ms));
+  //   }
+  //   async function typeSentence(sentence, eleRef, delay = 100) {
+  //     const letters = sentence.split('');
+  //     let i = 0;
+  //     while (i < letters.length) {
+  //       await waitForMs(delay);
+  //       if (typeof document !== `undefined`) {
+  //         if (document.getElementById(eleRef).innerHTML !== sentence) {
+  //           document.getElementById(eleRef).append(letters[i]);
+  //           i++;
+  //         }
+  //       }
+  //     }
+  //     return;
+  //   }
 
-  useEffect(() => {
-    function waitForMs(ms) {
-      return new Promise(resolve => setTimeout(resolve, ms));
-    }
-    async function typeSentence(sentence, eleRef, delay = 100) {
-      const letters = sentence.split('');
-      let i = 0;
-      while (i < letters.length) {
-        await waitForMs(delay);
-        if (typeof document !== `undefined`) {
-          if (document.getElementById(eleRef).innerHTML !== sentence) {
-            document.getElementById(eleRef).append(letters[i]);
-            i++;
-          }
-        }
-      }
-      return;
-    }
-
-    typeSentence('G+ Pattern Library', 'sentence');
-  });
+  //   typeSentence('G+ Pattern Library', 'sentence');
+  // });
 
   return (
     <StyledGeletkaHeader>
       <h1>
-        <Link id="sentence" to="/" />
+        {/* <Link id="sentence" to="/" /> */}
+        G+ Pattern Library
         <span id="input-cursor">|</span>
       </h1>
     </StyledGeletkaHeader>

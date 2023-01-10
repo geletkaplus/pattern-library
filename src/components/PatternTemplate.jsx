@@ -10,6 +10,12 @@ const StyledPatternTemplate = styled.div`
   max-width: 52rem;
   width: 100%;
 
+  pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    text-align: justify;
+  }
+
   h3 {
     text-transform: uppercase;
     letter-spacing: 0.3rem;

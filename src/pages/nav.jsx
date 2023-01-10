@@ -7,6 +7,11 @@ const NavPage = () => {
   return (
     <PatternTemplate
       componentName={'Nav'}
+      description={`Navigation bar that maps through an array (navList) of strings and returns a link to a slugified version of the string. 
+
+Uses the useWindowSize hook to generate either a horizontal or vertical nav depending on the desired screen width.
+
+<-- PROPS: navList, projectName -->`}
       code={`import React, { useState, useEffect } from 'react';
       import { Link } from 'gatsby';
       import { useWindowSize } from '../../lib/useWindowSize';
