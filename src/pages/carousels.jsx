@@ -1,5 +1,8 @@
 import React from 'react';
 import PatternTemplate from '../components/PatternTemplate';
+import TextCarousel, {
+  TextCarouselItem,
+} from '../components/patterns/TextCarousel';
 import ImageCarousel, {
   ImageCarouselItem,
 } from '../components/patterns/ImageCarousel';
@@ -7,178 +10,204 @@ import image1 from '../images/image-1.jpg';
 import image2 from '../images/image-2.jpg';
 import image3 from '../images/image-3.jpg';
 import image4 from '../images/image-4.jpg';
+import styled from 'styled-components';
+
+const StyledCarouselsPage = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+`;
 
 const CarouselsPage = () => {
   return (
-    <PatternTemplate
-      componentName={'Image Carousel'}
-      code={`import React, { useEffect, useState } from 'react';
-      import { useSwipeable } from 'react-swipeable';
-      import styled from 'styled-components';
+    <StyledCarouselsPage>
+      <PatternTemplate
+        componentName={'Image Carousel'}
+        code={`import React, { useEffect, useState } from 'react';
+        import { useSwipeable } from 'react-swipeable';
+        import styled from 'styled-components';
       
-      const StyledCarousel = styled.div\`
-        .carousel {
-          overflow: hidden;
-        }
-      
-        .inner {
-          white-space: nowrap;
-          transition: transform 0.3s;
-        }
-      
-        .carousel-item {
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
-          min-height: 10rem;
-          background: gray;
-          color: white;
-          width: 100%;
-          height: 25rem;
-      
-          img {
-            object-fit: cover;
+        const StyledCarousel = styled.div\`
+          .carousel {
             overflow: hidden;
-            height: 100%;
+          }
+      
+          .inner {
+            white-space: nowrap;
+            transition: transform 0.3s;
+          }
+      
+          .carousel-item {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 10rem;
+            background: gray;
+            color: white;
             width: 100%;
-          }
-        }
+            height: 25rem;
       
-        .indicators {
-          display: flex;
-          justify-content: space-between;
-          padding: 0.5rem 0;
-        }
-      
-        .indicators button {
-          padding: 0;
-          border: none;
-          background: white;
-          cursor: pointer;
-      
-          :hover {
-            text-decoration: underline;
-          }
-        }
-      
-        .num-container > button {
-          padding: 0.5rem;
-          border-radius: 5px;
-        }
-      
-        .num-container > button.active {
-          background-color: red;
-          color: #fff;
-        }
-      \`;
-      
-      export const CarouselItem = ({ children }) => {
-        return <div className="carousel-item">{children}</div>;
-      };
-      
-      const Carousel = ({ children }) => {
-        const [activeIndex, setActiveIndex] = useState(0);
-        const [paused, setPaused] = useState(false);
-      
-        const updateIndex = newIndex => {
-          if (newIndex < 0) {
-            newIndex = React.Children.count(children) - 1;
-          } else if (newIndex >= React.Children.count(children)) {
-            newIndex = 0;
+            img {
+              object-fit: cover;
+              overflow: hidden;
+              height: 100%;
+              width: 100%;
+            }
           }
       
-          setActiveIndex(newIndex);
+          .indicators {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+          }
+      
+          .indicators button {
+            padding: 0;
+            border: none;
+            background: white;
+            cursor: pointer;
+      
+            :hover {
+              text-decoration: underline;
+            }
+          }
+      
+          .num-container > button {
+            padding: 0.5rem;
+            border-radius: 5px;
+          }
+      
+          .num-container > button.active {
+            background-color: red;
+            color: #fff;
+          }
+        \`;
+      
+        export const CarouselItem = ({ children }) => {
+          return <div className="carousel-item">{children}</div>;
         };
       
-        useEffect(() => {
-          const interval = setInterval(() => {
-            if (!paused) {
-              updateIndex(activeIndex + 1);
-            }
-          }, 3000);
+        const Carousel = ({ children }) => {
+          const [activeIndex, setActiveIndex] = useState(0);
+          const [paused, setPaused] = useState(false);
       
-          return () => {
-            if (interval) {
-              clearInterval(interval);
+          const updateIndex = newIndex => {
+            if (newIndex < 0) {
+              newIndex = React.Children.count(children) - 1;
+            } else if (newIndex >= React.Children.count(children)) {
+              newIndex = 0;
             }
+      
+            setActiveIndex(newIndex);
           };
-        });
       
-        const handlers = useSwipeable({
-          onSwipedLeft: () => updateIndex(activeIndex + 1),
-          onSwipedRight: () => updateIndex(activeIndex - 1),
-        });
+          useEffect(() => {
+            const interval = setInterval(() => {
+              if (!paused) {
+                updateIndex(activeIndex + 1);
+              }
+            }, 3000);
       
-        return (
-          <StyledCarousel>
-            <div
-              {...handlers}
-              className="carousel"
-              onMouseEnter={() => setPaused(true)}
-              onMouseLeave={() => setPaused(false)}
-            >
+            return () => {
+              if (interval) {
+                clearInterval(interval);
+              }
+            };
+          });
+      
+          const handlers = useSwipeable({
+            onSwipedLeft: () => updateIndex(activeIndex + 1),
+            onSwipedRight: () => updateIndex(activeIndex - 1),
+          });
+      
+          return (
+            <StyledCarousel>
               <div
-                className="inner"
-                style={{ transform: \`translateX(-\${activeIndex * 100}%)\` }}
+                {...handlers}
+                className="carousel"
+                onMouseEnter={() => setPaused(true)}
+                onMouseLeave={() => setPaused(false)}
               >
-                {React.Children.map(children, (child, index) => {
-                  return React.cloneElement(child);
-                })}
-              </div>
-              <div className="indicators">
-                <button
-                  onClick={() => {
-                    updateIndex(activeIndex - 1);
-                  }}
+                <div
+                  className="inner"
+                  style={{ transform: \`translateX(-\${activeIndex * 100}%)\` }}
                 >
-                  PREV
-                </button>
-                <div className="num-container">
                   {React.Children.map(children, (child, index) => {
-                    return (
-                      <button
-                        className={\`\${index === activeIndex ? 'active' : ''}\`}
-                        onClick={() => {
-                          updateIndex(index);
-                        }}
-                      >
-                        {index + 1}
-                      </button>
-                    );
+                    return React.cloneElement(child);
                   })}
                 </div>
-                <button
-                  onClick={() => {
-                    updateIndex(activeIndex + 1);
-                  }}
-                >
-                  NEXT
-                </button>
+                <div className="indicators">
+                  <button
+                    onClick={() => {
+                      updateIndex(activeIndex - 1);
+                    }}
+                  >
+                    PREV
+                  </button>
+                  <div className="num-container">
+                    {React.Children.map(children, (child, index) => {
+                      return (
+                        <button
+                          className={\`\${index === activeIndex ? 'active' : ''}\`}
+                          onClick={() => {
+                            updateIndex(index);
+                          }}
+                        >
+                          {index + 1}
+                        </button>
+                      );
+                    })}
+                  </div>
+                  <button
+                    onClick={() => {
+                      updateIndex(activeIndex + 1);
+                    }}
+                  >
+                    NEXT
+                  </button>
+                </div>
               </div>
-            </div>
-          </StyledCarousel>
-        );
-      };
+            </StyledCarousel>
+          );
+        };
       
-      export default Carousel;
+        export default Carousel;
       
-    `}
-    >
-      <ImageCarousel>
-        <ImageCarouselItem>
-          <img src={image1} alt="image 1" />
-        </ImageCarouselItem>
-        <ImageCarouselItem>
-          <img src={image2} alt="image 2" />
-        </ImageCarouselItem>
-        <ImageCarouselItem>
-          <img src={image3} alt="image 3" />
-        </ImageCarouselItem>
-        <ImageCarouselItem>
-          <img src={image4} alt="image 4" />
-        </ImageCarouselItem>
-      </ImageCarousel>
-    </PatternTemplate>
+      `}
+      >
+        <ImageCarousel>
+          <ImageCarouselItem>
+            <img src={image1} alt="image 1" />
+          </ImageCarouselItem>
+          <ImageCarouselItem>
+            <img src={image2} alt="image 2" />
+          </ImageCarouselItem>
+          <ImageCarouselItem>
+            <img src={image3} alt="image 3" />
+          </ImageCarouselItem>
+          <ImageCarouselItem>
+            <img src={image4} alt="image 4" />
+          </ImageCarouselItem>
+        </ImageCarousel>
+      </PatternTemplate>
+
+      <PatternTemplate componentName="Text Carousel" code={``}>
+        <TextCarousel>
+          <TextCarouselItem
+            quote="“This is the best pattern library ever.”"
+            citation="Doug Leinen, Chief Code Extraordinaire"
+          />
+          <TextCarouselItem
+            quote="“This is another quote used as an example.”"
+            citation="Abraham Lincoln"
+          />
+          <TextCarouselItem
+            quote="“What an amazing testimonial carousel.”"
+            citation="John Geletka"
+          />
+        </TextCarousel>
+      </PatternTemplate>
+    </StyledCarouselsPage>
   );
 };
 

@@ -12,24 +12,6 @@ const StyledImageCarousel = styled.div`
     transition: transform 0.3s;
   }
 
-  .carousel-item {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 10rem;
-    background: gray;
-    color: white;
-    width: 100%;
-    height: 25rem;
-
-    img {
-      object-fit: cover;
-      overflow: hidden;
-      height: 100%;
-      width: 100%;
-    }
-  }
-
   .indicators {
     display: flex;
     justify-content: space-between;
@@ -58,8 +40,26 @@ const StyledImageCarousel = styled.div`
   }
 `;
 
+const StyledCarouselItem = styled.div`
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 10rem;
+  background: gray;
+  color: white;
+  width: 100%;
+  height: 25rem;
+
+  img {
+    object-fit: cover;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+  }
+`;
+
 export const ImageCarouselItem = ({ children }) => {
-  return <div className="carousel-item">{children}</div>;
+  return <StyledCarouselItem>{children}</StyledCarouselItem>;
 };
 
 const ImageCarousel = ({ children }) => {
