@@ -1,17 +1,75 @@
 import React from 'react';
 import PatternTemplate from '../components/PatternTemplate';
 import Button from '../components/patterns/Button';
+import Pill from '../components/patterns/inputs/Pill';
 import styled from 'styled-components';
 
 const StyledButtonPage = styled.div`
   display: flex;
   flex-direction: column;
   gap: 3rem;
+
+  .pill-container {
+    display: flex;
+    gap: 2rem;
+  }
 `;
 
 const ButtonPage = () => {
   return (
     <StyledButtonPage>
+      <PatternTemplate
+        componentName={'Pill button'}
+        code={`
+import React, { useState } from 'react';
+import close from '../../../images/black-close.svg';
+import styled from 'styled-components';
+
+const StyledPill = styled.div\`
+  padding: 0.5rem 1rem;
+  max-width: fit-content;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 6.25rem;
+  border: 2px solid gray;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+
+  button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding: 0;
+  }
+\`;
+
+const Pill = ({ text }) => {
+  const [display, setDisplay] = useState(true);
+
+  return (
+    display && (
+      <StyledPill className="pill">
+        {text}
+        <button onClick={() => setDisplay(false)}>
+          <img src={close} alt="remove pill" height="8" width="8" />
+        </button>
+      </StyledPill>
+    )
+  );
+};
+
+export default Pill;
+
+      `}
+      >
+        <div className="pill-container">
+          <Pill text="Text 1" />
+          <Pill text="Text 2" />
+          <Pill text="Text 3" />
+          <Pill text="Text 4" />
+          <Pill text="Text 5" />
+        </div>
+      </PatternTemplate>
       <PatternTemplate componentName={'Internal link button'}>
         <Button link="/" text={'Internal link Button'} />
       </PatternTemplate>
