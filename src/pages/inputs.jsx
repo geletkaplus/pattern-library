@@ -17,6 +17,7 @@ const InputsPage = () => {
     <StyledInputsPage>
       <PatternTemplate
         componentName={'Radio button'}
+        description={`PROPS: { label, value, name }`}
         code={`import React from 'react';
 import styled from 'styled-components';
 
@@ -39,6 +40,7 @@ export default RadioButton;
 
       <PatternTemplate
         componentName={'Checkbox'}
+        description={`PROPS: { label }`}
         code={`import React from 'react';
 import styled from 'styled-components';
 
@@ -60,6 +62,7 @@ export default Checkbox;
 
       <PatternTemplate
         componentName={'Text area'}
+        description={`PROPS: { label }`}
         code={`import React from 'react';
 import styled from 'styled-components';
 
@@ -98,6 +101,7 @@ export default TextArea;
 
       <PatternTemplate
         componentName={'Text input'}
+        description={`PROPS: { label }`}
         code={`import React from 'react';
 import styled from 'styled-components';
 
