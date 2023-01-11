@@ -6,7 +6,6 @@ import styled from 'styled-components';
 
 const StyledNav = styled.nav`
   padding: 1.875rem;
-  border: 2px solid gray;
   border-radius: 5px;
 
   ul.nav-links {
@@ -18,7 +17,6 @@ const StyledNav = styled.nav`
 const StyledSidebar = styled.nav`
   padding: 1.875rem;
   width: fit-content;
-  border: 2px solid gray;
   border-radius: 5px;
 
   ul.nav-links {

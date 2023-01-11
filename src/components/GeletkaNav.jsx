@@ -40,18 +40,25 @@ const GeletkaNav = () => {
   const components = [
     'Inputs',
     'Accordion',
-    'Button',
+    'Buttons',
     // 'Call to action',
     // 'Card',
-    'Carousel',
+    'Carousels',
     // 'Photos',
     // 'Videos',
     'Modal',
     'Nav',
     'Tool tip',
+    'Headers',
   ];
 
-  const guidelines = ['Library', 'Breakpoints', 'Color', 'Fonts'];
+  const guidelines = [
+    'Library',
+    'Breakpoints',
+    'Color',
+    // 'Fonts'
+  ];
+
   return (
     <StyledGeletkaNav>
       <div>

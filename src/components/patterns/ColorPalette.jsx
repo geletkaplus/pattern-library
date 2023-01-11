@@ -6,24 +6,24 @@ const ColorPalette = createGlobalStyle`
     --white: #FFFFFF;
 
     // Primary
-    --primary-50: #ff0000;
-    --primary-100: #ff3939;
+    --primary: #ff0000;
+    --primary100: #ff3939;
 
     // Secondary
-    --secondary-50: #800F2F;
-    --secondary-100: #A4133C;
+    --secondary: #800F2F;
+    --secondary100: #A4133C;
 
     // Accent
-    --accent-50: #ff8800;
-    --accent-100: #ff9500;
+    --accent: #ff8800;
+    --accent100: #ff9500;
     
     // Neutral
-    --neutral-50: #e8d1c5;
-    --neutral-100: #eddcd2;
+    --neutral: #e8d1c5;
+    --neutral100: #eddcd2;
    
     // Gray
-    --gray-50: #8a817c;
-    --gray-100: #bcb8b1;
+    --gray: #8a817c;
+    --gray100: #bcb8b1;
   }
 
 `;

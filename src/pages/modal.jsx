@@ -6,6 +6,9 @@ const ModalPage = () => {
   return (
     <PatternTemplate
       componentName={'Modal'}
+      description={`Modal that uses the useClickOutside hook to close upon clicking outside of it.
+      
+PROPS: { toggleText, children }`}
       code={`import React, { useState, useRef } from 'react';
     import useClickOutside from '../../lib/useClickOutside';
     import Button from './Button';

@@ -4,17 +4,19 @@ import styled from 'styled-components';
 
 const StyledBlock = styled.div`
   display: flex;
-  border: 2px solid gray;
+  border: 2px solid black;
   width: 11rem;
   height: 11rem;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 0.5rem;
+  border-radius: 5px;
 
   .color {
     width: 5rem;
     height: 5rem;
+    border-radius: 100px;
   }
 `;
 
@@ -32,13 +34,13 @@ const Block = () => {
   const colors = [
     { hex: '#000000', name: '--black' },
     { hex: '#FFFFFF', name: '--white' },
-    { hex: '#ff0000', name: '--primary-50' },
+    { hex: '#db0303', name: '--primary-50' },
     { hex: '#ff3939', name: '--primary-100' },
-    { hex: '#800F2F', name: '--secondary-50' },
+    { hex: '#6a0925', name: '--secondary-50' },
     { hex: '#A4133C', name: '--secondary-100' },
     { hex: '#ff8800', name: '--accent-50' },
-    { hex: '#ff9500', name: '--accent-100' },
-    { hex: '#e8d1c5', name: '--neutral-50' },
+    { hex: '#feba5c', name: '--accent-100' },
+    { hex: '#e9c2ac', name: '--neutral-50' },
     { hex: '#eddcd2', name: '--neutral-100' },
     { hex: '#8a817c', name: '--gray-50' },
     { hex: '#bcb8b1', name: '--gray-100' },
@@ -66,19 +68,19 @@ const ColorPalette = createGlobalStyle\`
     --white: #FFFFFF;
 
     // Primary
-    --primary-50: #ff0000;
+    --primary-50: #db0303;
     --primary-100: #ff3939;
 
     // Secondary
-    --secondary-50: #800F2F;
+    --secondary-50: #6a0925;
     --secondary-100: #A4133C;
 
     // Accent
     --accent-50: #ff8800;
-    --accent-100: #ff9500;
+    --accent-100: #feba5c;
     
     // Neutral
-    --neutral-50: #e8d1c5;
+    --neutral-50: #e9c2ac;
     --neutral-100: #eddcd2;
    
     // Gray

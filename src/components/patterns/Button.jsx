@@ -73,7 +73,7 @@ const Button = ({ text, secondary, clear, link, func }) => {
     <StyledButton className="button">
       {link ? (
         link[0] !== '/' ? (
-          <a className={className} href={link}>
+          <a className={className} href={link} target="_blank">
             {text}
           </a>
         ) : (

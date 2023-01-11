@@ -6,9 +6,15 @@ import { CopyBlock } from 'react-code-blocks';
 const StyledPatternTemplate = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 1rem;
   max-width: 52rem;
   width: 100%;
+
+  pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    text-align: justify;
+  }
 
   h3 {
     text-transform: uppercase;
@@ -54,7 +60,7 @@ const StyledPatternTemplate = styled.div`
   }
 `;
 
-const PatternTemplate = ({ componentName, children, code }) => {
+const PatternTemplate = ({ componentName, children, code, description }) => {
   const [visible, setVisible] = useState(false);
 
   const toggleContainer = () => {
@@ -62,8 +68,9 @@ const PatternTemplate = ({ componentName, children, code }) => {
   };
 
   return (
-    <StyledPatternTemplate>
+    <StyledPatternTemplate className="pattern-template">
       <h3>{componentName}</h3>
+      {description && <pre className="description">{description}</pre>}
       <div className="example-container">{children}</div>
       {code && (
         <div className="code-container">
