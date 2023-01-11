@@ -20,6 +20,9 @@ const ButtonPage = () => {
     <StyledButtonPage>
       <PatternTemplate
         componentName={'Pill button'}
+        description={`Pill buttons to use for inputs that create a list of values.
+        
+PROPS: { text }`}
         code={`
 import React, { useState } from 'react';
 import close from '../../../images/black-close.svg';
@@ -70,7 +73,15 @@ export default Pill;
           <Pill text="Text 5" />
         </div>
       </PatternTemplate>
-      <PatternTemplate componentName={'Internal link button'}>
+
+      <PatternTemplate
+        componentName={'Internal link button'}
+        description={`Button with primary, secondary, primary-clear, and secondary-clear variants. Use the 'func' prop to pass onClick behavior.
+
+Also allows for semantic links when the 'link' prop is defined. External links render an <a> tag that opens an external tab while internal links render a Gatsby <Link> tag.
+      
+PROPS: { text, secondary, clear, link, func }`}
+      >
         <Button link="/" text={'Internal link Button'} />
       </PatternTemplate>
       <PatternTemplate componentName={'External link button'}>
@@ -176,7 +187,7 @@ const Button = ({ text, secondary, clear, link, func }) => {
     <StyledButton className="button">
       {link ? (
         link[0] !== '/' ? (
-          <a className={className} href={link}>
+          <a className={className} href={link} target="_blank">
             {text}
           </a>
         ) : (
