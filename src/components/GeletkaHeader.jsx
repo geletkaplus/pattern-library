@@ -71,8 +71,9 @@ const GeletkaHeader = () => {
   return (
     <StyledGeletkaHeader>
       <h1>
-        {/* <Link id="sentence" to="/" /> */}
-        G+ Pattern Library
+        <Link id="sentence" to="/">
+          G+ Pattern Library
+        </Link>
         <span id="input-cursor">|</span>
       </h1>
     </StyledGeletkaHeader>
